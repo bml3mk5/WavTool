@@ -1,0 +1,520 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D92F13A8231E37BD0039EACA /* wavtool.icns in Resources */ = {isa = PBXBuildFile; fileRef = D92F13A5231E37BD0039EACA /* wavtool.icns */; };
+		D92F13A9231E37BD0039EACA /* wavtool.xpm in Resources */ = {isa = PBXBuildFile; fileRef = D92F13A6231E37BD0039EACA /* wavtool.xpm */; };
+		D92F13DD231E382F0039EACA /* config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13AB231E382F0039EACA /* config.cpp */; };
+		D92F13DE231E382F0039EACA /* configbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13AD231E382F0039EACA /* configbox.cpp */; };
+		D92F13DF231E382F0039EACA /* errorinfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13AF231E382F0039EACA /* errorinfo.cpp */; };
+		D92F13E0231E382F0039EACA /* findposbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13B1231E382F0039EACA /* findposbox.cpp */; };
+		D92F13E1231E382F0039EACA /* maddressbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13B3231E382F0039EACA /* maddressbox.cpp */; };
+		D92F13E2231E382F0039EACA /* parsewav.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13B5231E382F0039EACA /* parsewav.cpp */; };
+		D92F13E3231E382F0039EACA /* paw_datas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13B8231E382F0039EACA /* paw_datas.cpp */; };
+		D92F13E4231E382F0039EACA /* paw_defs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13BA231E382F0039EACA /* paw_defs.cpp */; };
+		D92F13E5231E382F0039EACA /* paw_dft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13BC231E382F0039EACA /* paw_dft.cpp */; };
+		D92F13E6231E382F0039EACA /* paw_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13BE231E382F0039EACA /* paw_file.cpp */; };
+		D92F13E7231E382F0039EACA /* paw_format.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13C0231E382F0039EACA /* paw_format.cpp */; };
+		D92F13E8231E382F0039EACA /* paw_param.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13C2231E382F0039EACA /* paw_param.cpp */; };
+		D92F13E9231E382F0039EACA /* paw_parse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13C4231E382F0039EACA /* paw_parse.cpp */; };
+		D92F13EA231E382F0039EACA /* paw_parsebin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13C6231E382F0039EACA /* paw_parsebin.cpp */; };
+		D92F13EB231E382F0039EACA /* paw_parsecar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13C8231E382F0039EACA /* paw_parsecar.cpp */; };
+		D92F13EC231E382F0039EACA /* paw_parseser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13CA231E382F0039EACA /* paw_parseser.cpp */; };
+		D92F13ED231E382F0039EACA /* paw_parsewav.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13CC231E382F0039EACA /* paw_parsewav.cpp */; };
+		D92F13EE231E382F0039EACA /* paw_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13CE231E382F0039EACA /* paw_util.cpp */; };
+		D92F13EF231E382F0039EACA /* progressbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13D0231E382F0039EACA /* progressbox.cpp */; };
+		D92F13F0231E382F0039EACA /* rftypebox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13D2231E382F0039EACA /* rftypebox.cpp */; };
+		D92F13F1231E382F0039EACA /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13D6231E382F0039EACA /* utils.cpp */; };
+		D92F13F2231E382F0039EACA /* wavewindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13D9231E382F0039EACA /* wavewindow.cpp */; };
+		D92F13F3231E382F0039EACA /* wavtool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13DB231E382F0039EACA /* wavtool.cpp */; };
+		D9C49EBF1BF1C01400831032 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C49EBE1BF1C01400831032 /* IOKit.framework */; };
+		D9C49EC11BF1C02200831032 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C49EC01BF1C02200831032 /* Carbon.framework */; };
+		D9C49EC31BF1C02D00831032 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C49EC21BF1C02D00831032 /* Cocoa.framework */; };
+		D9C49EC51BF1C03700831032 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C49EC41BF1C03700831032 /* AudioToolbox.framework */; };
+		D9C49EC71BF1C05900831032 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C49EC61BF1C05900831032 /* OpenGL.framework */; };
+		D9C49EF21BF1CA4100831032 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C49EF11BF1CA4100831032 /* WebKit.framework */; };
+		D9C49F041BF1D3B600831032 /* wavtool.mo in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9C49EFC1BF1D2C700831032 /* wavtool.mo */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D9C49F031BF1D39000831032 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = lang/ja;
+			dstSubfolderSpec = 7;
+			files = (
+				D9C49F041BF1D3B600831032 /* wavtool.mo in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D92F13A4231E37BD0039EACA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../src/res/Info.plist; sourceTree = "<group>"; };
+		D92F13A5231E37BD0039EACA /* wavtool.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = wavtool.icns; path = ../../src/res/wavtool.icns; sourceTree = "<group>"; };
+		D92F13A6231E37BD0039EACA /* wavtool.xpm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wavtool.xpm; path = ../../src/res/wavtool.xpm; sourceTree = "<group>"; };
+		D92F13AA231E382F0039EACA /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		D92F13AB231E382F0039EACA /* config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = config.cpp; sourceTree = "<group>"; };
+		D92F13AC231E382F0039EACA /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		D92F13AD231E382F0039EACA /* configbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = configbox.cpp; sourceTree = "<group>"; };
+		D92F13AE231E382F0039EACA /* configbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = configbox.h; sourceTree = "<group>"; };
+		D92F13AF231E382F0039EACA /* errorinfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = errorinfo.cpp; sourceTree = "<group>"; };
+		D92F13B0231E382F0039EACA /* errorinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = errorinfo.h; sourceTree = "<group>"; };
+		D92F13B1231E382F0039EACA /* findposbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = findposbox.cpp; sourceTree = "<group>"; };
+		D92F13B2231E382F0039EACA /* findposbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = findposbox.h; sourceTree = "<group>"; };
+		D92F13B3231E382F0039EACA /* maddressbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maddressbox.cpp; sourceTree = "<group>"; };
+		D92F13B4231E382F0039EACA /* maddressbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maddressbox.h; sourceTree = "<group>"; };
+		D92F13B5231E382F0039EACA /* parsewav.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = parsewav.cpp; sourceTree = "<group>"; };
+		D92F13B6231E382F0039EACA /* parsewav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parsewav.h; sourceTree = "<group>"; };
+		D92F13B8231E382F0039EACA /* paw_datas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = paw_datas.cpp; sourceTree = "<group>"; };
+		D92F13B9231E382F0039EACA /* paw_datas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paw_datas.h; sourceTree = "<group>"; };
+		D92F13BA231E382F0039EACA /* paw_defs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = paw_defs.cpp; sourceTree = "<group>"; };
+		D92F13BB231E382F0039EACA /* paw_defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paw_defs.h; sourceTree = "<group>"; };
+		D92F13BC231E382F0039EACA /* paw_dft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = paw_dft.cpp; sourceTree = "<group>"; };
+		D92F13BD231E382F0039EACA /* paw_dft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paw_dft.h; sourceTree = "<group>"; };
+		D92F13BE231E382F0039EACA /* paw_file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = paw_file.cpp; sourceTree = "<group>"; };
+		D92F13BF231E382F0039EACA /* paw_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paw_file.h; sourceTree = "<group>"; };
+		D92F13C0231E382F0039EACA /* paw_format.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = paw_format.cpp; sourceTree = "<group>"; };
+		D92F13C1231E382F0039EACA /* paw_format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paw_format.h; sourceTree = "<group>"; };
+		D92F13C2231E382F0039EACA /* paw_param.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = paw_param.cpp; sourceTree = "<group>"; };
+		D92F13C3231E382F0039EACA /* paw_param.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paw_param.h; sourceTree = "<group>"; };
+		D92F13C4231E382F0039EACA /* paw_parse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = paw_parse.cpp; sourceTree = "<group>"; };
+		D92F13C5231E382F0039EACA /* paw_parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paw_parse.h; sourceTree = "<group>"; };
+		D92F13C6231E382F0039EACA /* paw_parsebin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = paw_parsebin.cpp; sourceTree = "<group>"; };
+		D92F13C7231E382F0039EACA /* paw_parsebin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paw_parsebin.h; sourceTree = "<group>"; };
+		D92F13C8231E382F0039EACA /* paw_parsecar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = paw_parsecar.cpp; sourceTree = "<group>"; };
+		D92F13C9231E382F0039EACA /* paw_parsecar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paw_parsecar.h; sourceTree = "<group>"; };
+		D92F13CA231E382F0039EACA /* paw_parseser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = paw_parseser.cpp; sourceTree = "<group>"; };
+		D92F13CB231E382F0039EACA /* paw_parseser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paw_parseser.h; sourceTree = "<group>"; };
+		D92F13CC231E382F0039EACA /* paw_parsewav.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = paw_parsewav.cpp; sourceTree = "<group>"; };
+		D92F13CD231E382F0039EACA /* paw_parsewav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paw_parsewav.h; sourceTree = "<group>"; };
+		D92F13CE231E382F0039EACA /* paw_util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = paw_util.cpp; sourceTree = "<group>"; };
+		D92F13CF231E382F0039EACA /* paw_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paw_util.h; sourceTree = "<group>"; };
+		D92F13D0231E382F0039EACA /* progressbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = progressbox.cpp; sourceTree = "<group>"; };
+		D92F13D1231E382F0039EACA /* progressbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = progressbox.h; sourceTree = "<group>"; };
+		D92F13D2231E382F0039EACA /* rftypebox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rftypebox.cpp; sourceTree = "<group>"; };
+		D92F13D3231E382F0039EACA /* rftypebox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rftypebox.h; sourceTree = "<group>"; };
+		D92F13D4231E382F0039EACA /* tchar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tchar.h; sourceTree = "<group>"; };
+		D92F13D5231E382F0039EACA /* typedef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = typedef.h; sourceTree = "<group>"; };
+		D92F13D6231E382F0039EACA /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
+		D92F13D7231E382F0039EACA /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		D92F13D8231E382F0039EACA /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		D92F13D9231E382F0039EACA /* wavewindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wavewindow.cpp; sourceTree = "<group>"; };
+		D92F13DA231E382F0039EACA /* wavewindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavewindow.h; sourceTree = "<group>"; };
+		D92F13DB231E382F0039EACA /* wavtool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wavtool.cpp; sourceTree = "<group>"; };
+		D92F13DC231E382F0039EACA /* wavtool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavtool.h; sourceTree = "<group>"; };
+		D9C49E571BF1BCA200831032 /* wavtool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wavtool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9C49EBE1BF1C01400831032 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		D9C49EC01BF1C02200831032 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		D9C49EC21BF1C02D00831032 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D9C49EC41BF1C03700831032 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D9C49EC61BF1C05900831032 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		D9C49EF11BF1CA4100831032 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D9C49EFC1BF1D2C700831032 /* wavtool.mo */ = {isa = PBXFileReference; lastKnownFileType = file; path = wavtool.mo; sourceTree = "<group>"; };
+		D9C49EFD1BF1D2C700831032 /* wavtool.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = wavtool.po; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D9C49E541BF1BCA200831032 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9C49EC71BF1C05900831032 /* OpenGL.framework in Frameworks */,
+				D9C49EC51BF1C03700831032 /* AudioToolbox.framework in Frameworks */,
+				D9C49EC31BF1C02D00831032 /* Cocoa.framework in Frameworks */,
+				D9C49EC11BF1C02200831032 /* Carbon.framework in Frameworks */,
+				D9C49EBF1BF1C01400831032 /* IOKit.framework in Frameworks */,
+				D9C49EF21BF1CA4100831032 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D9C49E4E1BF1BCA200831032 = {
+			isa = PBXGroup;
+			children = (
+				D9C49F071BF1D4E500831032 /* Resources */,
+				D9C49EF01BF1C55F00831032 /* Frameworks */,
+				D9C49E591BF1BCA200831032 /* Sources */,
+				D9C49E581BF1BCA200831032 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D9C49E581BF1BCA200831032 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9C49E571BF1BCA200831032 /* wavtool.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D9C49E591BF1BCA200831032 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D92F13AA231E382F0039EACA /* common.h */,
+				D92F13AB231E382F0039EACA /* config.cpp */,
+				D92F13AC231E382F0039EACA /* config.h */,
+				D92F13AD231E382F0039EACA /* configbox.cpp */,
+				D92F13AE231E382F0039EACA /* configbox.h */,
+				D92F13AF231E382F0039EACA /* errorinfo.cpp */,
+				D92F13B0231E382F0039EACA /* errorinfo.h */,
+				D92F13B1231E382F0039EACA /* findposbox.cpp */,
+				D92F13B2231E382F0039EACA /* findposbox.h */,
+				D92F13B3231E382F0039EACA /* maddressbox.cpp */,
+				D92F13B4231E382F0039EACA /* maddressbox.h */,
+				D92F13B5231E382F0039EACA /* parsewav.cpp */,
+				D92F13B6231E382F0039EACA /* parsewav.h */,
+				D92F13B8231E382F0039EACA /* paw_datas.cpp */,
+				D92F13B9231E382F0039EACA /* paw_datas.h */,
+				D92F13BA231E382F0039EACA /* paw_defs.cpp */,
+				D92F13BB231E382F0039EACA /* paw_defs.h */,
+				D92F13BC231E382F0039EACA /* paw_dft.cpp */,
+				D92F13BD231E382F0039EACA /* paw_dft.h */,
+				D92F13BE231E382F0039EACA /* paw_file.cpp */,
+				D92F13BF231E382F0039EACA /* paw_file.h */,
+				D92F13C0231E382F0039EACA /* paw_format.cpp */,
+				D92F13C1231E382F0039EACA /* paw_format.h */,
+				D92F13C2231E382F0039EACA /* paw_param.cpp */,
+				D92F13C3231E382F0039EACA /* paw_param.h */,
+				D92F13C4231E382F0039EACA /* paw_parse.cpp */,
+				D92F13C5231E382F0039EACA /* paw_parse.h */,
+				D92F13C6231E382F0039EACA /* paw_parsebin.cpp */,
+				D92F13C7231E382F0039EACA /* paw_parsebin.h */,
+				D92F13C8231E382F0039EACA /* paw_parsecar.cpp */,
+				D92F13C9231E382F0039EACA /* paw_parsecar.h */,
+				D92F13CA231E382F0039EACA /* paw_parseser.cpp */,
+				D92F13CB231E382F0039EACA /* paw_parseser.h */,
+				D92F13CC231E382F0039EACA /* paw_parsewav.cpp */,
+				D92F13CD231E382F0039EACA /* paw_parsewav.h */,
+				D92F13CE231E382F0039EACA /* paw_util.cpp */,
+				D92F13CF231E382F0039EACA /* paw_util.h */,
+				D92F13D0231E382F0039EACA /* progressbox.cpp */,
+				D92F13D1231E382F0039EACA /* progressbox.h */,
+				D92F13D2231E382F0039EACA /* rftypebox.cpp */,
+				D92F13D3231E382F0039EACA /* rftypebox.h */,
+				D92F13D4231E382F0039EACA /* tchar.h */,
+				D92F13D5231E382F0039EACA /* typedef.h */,
+				D92F13D6231E382F0039EACA /* utils.cpp */,
+				D92F13D7231E382F0039EACA /* utils.h */,
+				D92F13D8231E382F0039EACA /* version.h */,
+				D92F13D9231E382F0039EACA /* wavewindow.cpp */,
+				D92F13DA231E382F0039EACA /* wavewindow.h */,
+				D92F13DB231E382F0039EACA /* wavtool.cpp */,
+				D92F13DC231E382F0039EACA /* wavtool.h */,
+			);
+			name = Sources;
+			path = ../../src;
+			sourceTree = SOURCE_ROOT;
+		};
+		D9C49EF01BF1C55F00831032 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9C49EF11BF1CA4100831032 /* WebKit.framework */,
+				D9C49EC61BF1C05900831032 /* OpenGL.framework */,
+				D9C49EC41BF1C03700831032 /* AudioToolbox.framework */,
+				D9C49EC21BF1C02D00831032 /* Cocoa.framework */,
+				D9C49EC01BF1C02200831032 /* Carbon.framework */,
+				D9C49EBE1BF1C01400831032 /* IOKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9C49EFA1BF1D2C700831032 /* lang */ = {
+			isa = PBXGroup;
+			children = (
+				D9C49EFB1BF1D2C700831032 /* ja */,
+			);
+			name = lang;
+			path = ../../lang;
+			sourceTree = "<group>";
+		};
+		D9C49EFB1BF1D2C700831032 /* ja */ = {
+			isa = PBXGroup;
+			children = (
+				D9C49EFC1BF1D2C700831032 /* wavtool.mo */,
+				D9C49EFD1BF1D2C700831032 /* wavtool.po */,
+			);
+			path = ja;
+			sourceTree = "<group>";
+		};
+		D9C49F071BF1D4E500831032 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D92F13A4231E37BD0039EACA /* Info.plist */,
+				D92F13A5231E37BD0039EACA /* wavtool.icns */,
+				D92F13A6231E37BD0039EACA /* wavtool.xpm */,
+				D9C49EFA1BF1D2C700831032 /* lang */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D9C49E561BF1BCA200831032 /* wavtool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9C49E741BF1BCA300831032 /* Build configuration list for PBXNativeTarget "wavtool" */;
+			buildPhases = (
+				D9C49E531BF1BCA200831032 /* Sources */,
+				D9C49E541BF1BCA200831032 /* Frameworks */,
+				D9C49E551BF1BCA200831032 /* Resources */,
+				D9C49F031BF1D39000831032 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wavtool;
+			productName = wavtool;
+			productReference = D9C49E571BF1BCA200831032 /* wavtool.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D9C49E4F1BF1BCA200831032 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Sasaji;
+				TargetAttributes = {
+					D9C49E561BF1BCA200831032 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = D9C49E521BF1BCA200831032 /* Build configuration list for PBXProject "wavtool" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D9C49E4E1BF1BCA200831032;
+			productRefGroup = D9C49E581BF1BCA200831032 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D9C49E561BF1BCA200831032 /* wavtool */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D9C49E551BF1BCA200831032 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D92F13A9231E37BD0039EACA /* wavtool.xpm in Resources */,
+				D92F13A8231E37BD0039EACA /* wavtool.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D9C49E531BF1BCA200831032 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D92F13EB231E382F0039EACA /* paw_parsecar.cpp in Sources */,
+				D92F13EF231E382F0039EACA /* progressbox.cpp in Sources */,
+				D92F13E1231E382F0039EACA /* maddressbox.cpp in Sources */,
+				D92F13ED231E382F0039EACA /* paw_parsewav.cpp in Sources */,
+				D92F13DD231E382F0039EACA /* config.cpp in Sources */,
+				D92F13EE231E382F0039EACA /* paw_util.cpp in Sources */,
+				D92F13F1231E382F0039EACA /* utils.cpp in Sources */,
+				D92F13EA231E382F0039EACA /* paw_parsebin.cpp in Sources */,
+				D92F13F2231E382F0039EACA /* wavewindow.cpp in Sources */,
+				D92F13E8231E382F0039EACA /* paw_param.cpp in Sources */,
+				D92F13E9231E382F0039EACA /* paw_parse.cpp in Sources */,
+				D92F13E7231E382F0039EACA /* paw_format.cpp in Sources */,
+				D92F13E3231E382F0039EACA /* paw_datas.cpp in Sources */,
+				D92F13E5231E382F0039EACA /* paw_dft.cpp in Sources */,
+				D92F13F3231E382F0039EACA /* wavtool.cpp in Sources */,
+				D92F13DF231E382F0039EACA /* errorinfo.cpp in Sources */,
+				D92F13F0231E382F0039EACA /* rftypebox.cpp in Sources */,
+				D92F13DE231E382F0039EACA /* configbox.cpp in Sources */,
+				D92F13E2231E382F0039EACA /* parsewav.cpp in Sources */,
+				D92F13E4231E382F0039EACA /* paw_defs.cpp in Sources */,
+				D92F13EC231E382F0039EACA /* paw_parseser.cpp in Sources */,
+				D92F13E6231E382F0039EACA /* paw_file.cpp in Sources */,
+				D92F13E0231E382F0039EACA /* findposbox.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D9C49E721BF1BCA300831032 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
+				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_CURRENT_VERSION = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(WX_WIDGET_INCLUDE)",
+				);
+				LIBRARY_SEARCH_PATHS = "$(WX_WIDGET_LIB)";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "$(WX_WIDGET_CFLAGS)";
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				OTHER_LDFLAGS = (
+					"$(WX_WIDGET_LIBS)",
+					"$(WX_WIDGET_LDFLAGS)",
+				);
+				SDKROOT = macosx;
+				WX_H = wx_osx_cocoau_;
+				WX_WIDGET_BASE = "../../../../../../Devel/wxWidgets-3.1.0/";
+				WX_WIDGET_CFLAGS = "-D_FILE_OFFSET_BITS=64 -DwxDEBUG_LEVEL=0 -D__WXMAC__ -D__WXOSX__ -D__WXOSX_COCOA__";
+				WX_WIDGET_DIR = "$(WX_WIDGET_BASE)build_debug_static_unicode/";
+				WX_WIDGET_INCLUDE = "$(WX_WIDGET_DIR)lib/wx/include/osx_cocoa-unicode-static-3.1 $(WX_WIDGET_BASE)include";
+				WX_WIDGET_LDFLAGS = "-lz -lpthread -liconv -lexpat";
+				WX_WIDGET_LIB = "$(WX_WIDGET_DIR)lib/";
+				WX_WIDGET_LIBS = "-lwxscintilla-3.1 -lwxregexu-3.1 -lwxtiff-3.1 -lwxjpeg-3.1 -lwxpng-3.1 -lwx_baseu-3.1 -lwx_baseu_xml-3.1 -lwx_baseu_net-3.1 -l$(WX_H)adv-3.1 -l$(WX_H)aui-3.1 -l$(WX_H)core-3.1 -l$(WX_H)gl-3.1 -l$(WX_H)html-3.1 -l$(WX_H)media-3.1 -l$(WX_H)propgrid-3.1 -l$(WX_H)qa-3.1 -l$(WX_H)ribbon-3.1 -l$(WX_H)richtext-3.1 -l$(WX_H)stc-3.1 -l$(WX_H)xrc-3.1";
+			};
+			name = Debug;
+		};
+		D9C49E731BF1BCA300831032 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
+				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_CURRENT_VERSION = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(WX_WIDGET_INCLUDE)",
+				);
+				LIBRARY_SEARCH_PATHS = "$(WX_WIDGET_LIB)";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "$(WX_WIDGET_CFLAGS)";
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				OTHER_LDFLAGS = (
+					"$(WX_WIDGET_LIBS)",
+					"$(WX_WIDGET_LDFLAGS)",
+				);
+				SDKROOT = macosx;
+				WX_H = wx_osx_cocoau_;
+				WX_WIDGET_BASE = "../../../../../../Devel/wxWidgets-3.1.0/";
+				WX_WIDGET_CFLAGS = "-D_FILE_OFFSET_BITS=64 -DwxDEBUG_LEVEL=0 -D__WXMAC__ -D__WXOSX__ -D__WXOSX_COCOA__";
+				WX_WIDGET_DIR = "$(WX_WIDGET_BASE)build_debug_static_unicode/";
+				WX_WIDGET_INCLUDE = "$(WX_WIDGET_DIR)lib/wx/include/osx_cocoa-unicode-static-3.1 $(WX_WIDGET_BASE)include";
+				WX_WIDGET_LDFLAGS = "-lz -lpthread -liconv -lexpat";
+				WX_WIDGET_LIB = "$(WX_WIDGET_DIR)lib/";
+				WX_WIDGET_LIBS = "-lwxscintilla-3.1 -lwxregexu-3.1 -lwxtiff-3.1 -lwxjpeg-3.1 -lwxpng-3.1 -lwx_baseu-3.1 -lwx_baseu_xml-3.1 -lwx_baseu_net-3.1 -l$(WX_H)adv-3.1 -l$(WX_H)aui-3.1 -l$(WX_H)core-3.1 -l$(WX_H)gl-3.1 -l$(WX_H)html-3.1 -l$(WX_H)media-3.1 -l$(WX_H)propgrid-3.1 -l$(WX_H)qa-3.1 -l$(WX_H)ribbon-3.1 -l$(WX_H)richtext-3.1 -l$(WX_H)stc-3.1 -l$(WX_H)xrc-3.1";
+			};
+			name = Release;
+		};
+		D9C49E751BF1BCA300831032 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/../../src/res/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WX_WIDGET_BASE = "${HOME}/Devel/wxWidgets-3.1.0/";
+			};
+			name = Debug;
+		};
+		D9C49E761BF1BCA300831032 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/../../src/res/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WX_WIDGET_BASE = "${HOME}/Devel/wxWidgets-3.1.0/";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D9C49E521BF1BCA200831032 /* Build configuration list for PBXProject "wavtool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9C49E721BF1BCA300831032 /* Debug */,
+				D9C49E731BF1BCA300831032 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9C49E741BF1BCA300831032 /* Build configuration list for PBXNativeTarget "wavtool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9C49E751BF1BCA300831032 /* Debug */,
+				D9C49E761BF1BCA300831032 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D9C49E4F1BF1BCA200831032 /* Project object */;
+}
