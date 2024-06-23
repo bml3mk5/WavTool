@@ -8,13 +8,14 @@
 #include <wx/filename.h>
 #include "wavewindow.h"
 #include "res/wavtool.xpm"
+#include "version.h"
 
 IMPLEMENT_APP(WavtoolApp)
 
 bool WavtoolApp::OnInit()
 {
 	SetAppPath();
-	SetAppName(_T("wavtool"));
+	SetAppName(_T(APPLICATION_NAME));
 
 	// load ini file
 	gConfig.Load(ini_path + GetAppName() + _T(".ini"));
@@ -22,7 +23,7 @@ bool WavtoolApp::OnInit()
 	// set locale search path and catalog name
 	mLocale.AddCatalogLookupPathPrefix(res_path + _T("lang"));
 	mLocale.AddCatalogLookupPathPrefix(_T("lang"));
-	mLocale.AddCatalog(_T("wavtool"));
+	mLocale.AddCatalog(_T(APPLICATION_NAME));
 
 	if (!wxApp::OnInit()) {
 		return false;
@@ -132,9 +133,9 @@ WavtoolFrame::WavtoolFrame(const wxString& title, const wxSize& size)
 {
 	// icon
 #ifdef __WXMSW__
-	SetIcon(wxIcon(_T("wavtool")));
+	SetIcon(wxIcon(_T(APPLICATION_NAME)));
 #elif defined(__WXGTK__) || defined(__WXMOTIF__)
-	SetIcon(wxIcon(wavtool_xpm));
+	SetIcon(wxIcon(APPLICATION_XPMICON_NAME));
 #endif
 
 //	wavewin = NULL;
@@ -1129,15 +1130,18 @@ WavtoolAbout::WavtoolAbout(wxWindow* parent, wxWindowID id)
 	wxBoxSizer *szrAll    = new wxBoxSizer(wxVERTICAL);
 
 	szrLeft->Add(new wxStaticBitmap(this, wxID_ANY,
-		wxBitmap(wavtool_xpm), wxDefaultPosition, wxSize(64, 64))
+		wxBitmap(APPLICATION_XPMICON_NAME), wxDefaultPosition, wxSize(64, 64))
 		, flags);
 
-	wxString str = _T("");
-	str += _T("Wavtool, Version ");
+	wxString str = _T(APPLICATION_FULLNAME);
+	str += _T(", Version ");
 	str += _T(APPLICATION_VERSION);
 	str += _T(" \"");
 	str += _T(PLATFORM);
 	str += _T("\"\n\n");
+#ifdef _DEBUG
+	str += _T("(Debug Version)\n\n");
+#endif
 	str	+= _T("using ");
 	str += wxVERSION_STRING;
 	str += _T("\n\n");

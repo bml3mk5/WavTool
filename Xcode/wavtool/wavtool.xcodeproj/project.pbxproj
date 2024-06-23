@@ -39,6 +39,7 @@
 		D9C49EC71BF1C05900831032 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C49EC61BF1C05900831032 /* OpenGL.framework */; };
 		D9C49EF21BF1CA4100831032 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C49EF11BF1CA4100831032 /* WebKit.framework */; };
 		D9C49F041BF1D3B600831032 /* wavtool.mo in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9C49EFC1BF1D2C700831032 /* wavtool.mo */; };
+		D9DDCEAF2B59796C00590D15 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DDCEAE2B59796C00590D15 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -117,6 +118,7 @@
 		D9C49EF11BF1CA4100831032 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D9C49EFC1BF1D2C700831032 /* wavtool.mo */ = {isa = PBXFileReference; lastKnownFileType = file; path = wavtool.mo; sourceTree = "<group>"; };
 		D9C49EFD1BF1D2C700831032 /* wavtool.po */ = {isa = PBXFileReference; lastKnownFileType = text; path = wavtool.po; sourceTree = "<group>"; };
+		D9DDCEAE2B59796C00590D15 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9DDCEAF2B59796C00590D15 /* QuartzCore.framework in Frameworks */,
 				D9C49EC71BF1C05900831032 /* OpenGL.framework in Frameworks */,
 				D9C49EC51BF1C03700831032 /* AudioToolbox.framework in Frameworks */,
 				D9C49EC31BF1C02D00831032 /* Cocoa.framework in Frameworks */,
@@ -215,6 +218,7 @@
 		D9C49EF01BF1C55F00831032 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9DDCEAE2B59796C00590D15 /* QuartzCore.framework */,
 				D9C49EF11BF1CA4100831032 /* WebKit.framework */,
 				D9C49EC61BF1C05900831032 /* OpenGL.framework */,
 				D9C49EC41BF1C03700831032 /* AudioToolbox.framework */,
@@ -294,6 +298,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -395,7 +400,7 @@
 					"$(WX_WIDGET_INCLUDE)",
 				);
 				LIBRARY_SEARCH_PATHS = "$(WX_WIDGET_LIB)";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(WX_WIDGET_CFLAGS)";
@@ -406,13 +411,13 @@
 				);
 				SDKROOT = macosx;
 				WX_H = wx_osx_cocoau_;
-				WX_WIDGET_BASE = "../../../../../../Devel/wxWidgets-3.1.0/";
+				WX_WIDGET_BASE = "$(HOME)/Devel/wxWidgets-3.2.4/";
 				WX_WIDGET_CFLAGS = "-D_FILE_OFFSET_BITS=64 -DwxDEBUG_LEVEL=0 -D__WXMAC__ -D__WXOSX__ -D__WXOSX_COCOA__";
 				WX_WIDGET_DIR = "$(WX_WIDGET_BASE)build_debug_static_unicode/";
-				WX_WIDGET_INCLUDE = "$(WX_WIDGET_DIR)lib/wx/include/osx_cocoa-unicode-static-3.1 $(WX_WIDGET_BASE)include";
+				WX_WIDGET_INCLUDE = "$(WX_WIDGET_DIR)lib/wx/include/osx_cocoa-unicode-static-3.2 $(WX_WIDGET_BASE)include";
 				WX_WIDGET_LDFLAGS = "-lz -lpthread -liconv -lexpat";
 				WX_WIDGET_LIB = "$(WX_WIDGET_DIR)lib/";
-				WX_WIDGET_LIBS = "-lwxscintilla-3.1 -lwxregexu-3.1 -lwxtiff-3.1 -lwxjpeg-3.1 -lwxpng-3.1 -lwx_baseu-3.1 -lwx_baseu_xml-3.1 -lwx_baseu_net-3.1 -l$(WX_H)adv-3.1 -l$(WX_H)aui-3.1 -l$(WX_H)core-3.1 -l$(WX_H)gl-3.1 -l$(WX_H)html-3.1 -l$(WX_H)media-3.1 -l$(WX_H)propgrid-3.1 -l$(WX_H)qa-3.1 -l$(WX_H)ribbon-3.1 -l$(WX_H)richtext-3.1 -l$(WX_H)stc-3.1 -l$(WX_H)xrc-3.1";
+				WX_WIDGET_LIBS = "-lwxscintilla-3.2 -lwxregexu-3.2 -lwxtiff-3.2 -lwxjpeg-3.2 -lwxpng-3.2 -lwx_baseu-3.2 -lwx_baseu_xml-3.2 -lwx_baseu_net-3.2 -l$(WX_H)adv-3.2 -l$(WX_H)aui-3.2 -l$(WX_H)core-3.2 -l$(WX_H)gl-3.2 -l$(WX_H)html-3.2 -l$(WX_H)media-3.2 -l$(WX_H)propgrid-3.2 -l$(WX_H)qa-3.2 -l$(WX_H)ribbon-3.2 -l$(WX_H)richtext-3.2 -l$(WX_H)stc-3.2 -l$(WX_H)xrc-3.2";
 			};
 			name = Debug;
 		};
@@ -451,7 +456,7 @@
 					"$(WX_WIDGET_INCLUDE)",
 				);
 				LIBRARY_SEARCH_PATHS = "$(WX_WIDGET_LIB)";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_CFLAGS = "$(WX_WIDGET_CFLAGS)";
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
@@ -461,13 +466,13 @@
 				);
 				SDKROOT = macosx;
 				WX_H = wx_osx_cocoau_;
-				WX_WIDGET_BASE = "../../../../../../Devel/wxWidgets-3.1.0/";
+				WX_WIDGET_BASE = "$(HOME)/Devel/wxWidgets-3.2.4/";
 				WX_WIDGET_CFLAGS = "-D_FILE_OFFSET_BITS=64 -DwxDEBUG_LEVEL=0 -D__WXMAC__ -D__WXOSX__ -D__WXOSX_COCOA__";
 				WX_WIDGET_DIR = "$(WX_WIDGET_BASE)build_debug_static_unicode/";
-				WX_WIDGET_INCLUDE = "$(WX_WIDGET_DIR)lib/wx/include/osx_cocoa-unicode-static-3.1 $(WX_WIDGET_BASE)include";
+				WX_WIDGET_INCLUDE = "$(WX_WIDGET_DIR)lib/wx/include/osx_cocoa-unicode-static-3.2 $(WX_WIDGET_BASE)include";
 				WX_WIDGET_LDFLAGS = "-lz -lpthread -liconv -lexpat";
 				WX_WIDGET_LIB = "$(WX_WIDGET_DIR)lib/";
-				WX_WIDGET_LIBS = "-lwxscintilla-3.1 -lwxregexu-3.1 -lwxtiff-3.1 -lwxjpeg-3.1 -lwxpng-3.1 -lwx_baseu-3.1 -lwx_baseu_xml-3.1 -lwx_baseu_net-3.1 -l$(WX_H)adv-3.1 -l$(WX_H)aui-3.1 -l$(WX_H)core-3.1 -l$(WX_H)gl-3.1 -l$(WX_H)html-3.1 -l$(WX_H)media-3.1 -l$(WX_H)propgrid-3.1 -l$(WX_H)qa-3.1 -l$(WX_H)ribbon-3.1 -l$(WX_H)richtext-3.1 -l$(WX_H)stc-3.1 -l$(WX_H)xrc-3.1";
+				WX_WIDGET_LIBS = "-lwxscintilla-3.2 -lwxregexu-3.2 -lwxtiff-3.2 -lwxjpeg-3.2 -lwxpng-3.2 -lwx_baseu-3.2 -lwx_baseu_xml-3.2 -lwx_baseu_net-3.2 -l$(WX_H)adv-3.2 -l$(WX_H)aui-3.2 -l$(WX_H)core-3.2 -l$(WX_H)gl-3.2 -l$(WX_H)html-3.2 -l$(WX_H)media-3.2 -l$(WX_H)propgrid-3.2 -l$(WX_H)qa-3.2 -l$(WX_H)ribbon-3.2 -l$(WX_H)richtext-3.2 -l$(WX_H)stc-3.2 -l$(WX_H)xrc-3.2";
 			};
 			name = Release;
 		};
@@ -478,7 +483,6 @@
 				INFOPLIST_FILE = "$(SRCROOT)/../../src/res/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WX_WIDGET_BASE = "${HOME}/Devel/wxWidgets-3.1.0/";
 			};
 			name = Debug;
 		};
@@ -489,7 +493,6 @@
 				INFOPLIST_FILE = "$(SRCROOT)/../../src/res/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WX_WIDGET_BASE = "${HOME}/Devel/wxWidgets-3.1.0/";
 			};
 			name = Release;
 		};

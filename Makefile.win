@@ -1,26 +1,29 @@
 #
-# for Windows + MinGW + MSYS
+# for Windows + MSYS2 + MinGW64
 #
 CC=g++
 
 CDEFS=
 DBG_CDEFS=-D_DEBUG -D_DEBUG_LOG
 
+
 #ARCH=-m32
 #ARCH=-m64
 
-WXDIR=/D/Devel/sources/wxWidgets-3.1.0
-WXCONFIG_SH=$(WXDIR)/build_release_shared_unicode/wx-config
-WXCONFIG_ST=$(WXDIR)/build_release_static_unicode_x64/wx-config
-WXCONFIG_DBG=$(WXDIR)/build_debug_static_unicode_x64/wx-config
+WXDIR=/D/Devel/sources/wxWidgets-3.2.4
+WXCONFIG_SH=wx-config
+WXCONFIG_ST=$(WXDIR)/build_release_static_unicode_mingw64/wx-config
+WXCONFIG_DBG=$(WXDIR)/build_debug_static_unicode_mingw64/wx-config
 
-SH_CFLAGS=$(ARCH) -Wall -O2 $(shell $(WXCONFIG_SH) --cppflags)
-ST_CFLAGS=$(ARCH) -Wall -O2 $(shell $(WXCONFIG_ST) --cppflags)
-DBG_CFLAGS=$(ARCH) -g -Wall -O0 $(shell $(WXCONFIG_DBG) --cppflags)
+SH_INCLUDES=$(shell $(WXCONFIG_SH) --cppflags)
+ST_INCLUDES=$(shell $(WXCONFIG_ST) --cppflags)
+DBG_INCLUDES=$(shell $(WXCONFIG_DBG) --cppflags)
+
+SH_CFLAGS=$(ARCH) -Wall -O2 $(SH_INCLUDES)
+ST_CFLAGS=$(ARCH) -Wall -O2 $(ST_INCLUDES)
+DBG_CFLAGS=$(ARCH) -g -Wall -O0 $(DBG_INCLUDES)
 
 LD=g++
-
-LOCALLIBDIR=/usr/local/lib
 
 SH_LDFLAGS=$(shell $(WXCONFIG_SH) --libs)
 ST_LDFLAGS=-static $(shell $(WXCONFIG_ST) --libs)
@@ -28,7 +31,7 @@ DBG_LDFLAGS=-static $(shell $(WXCONFIG_DBG) --libs)
 
 EXEFILE=wavtool.exe
 
-BUILDDIR=./build
+BUILDDIR=./build_msys2
 SH_BUILDDIR=$(BUILDDIR)/shared
 ST_BUILDDIR=$(BUILDDIR)/static
 DBG_BUILDDIR=$(BUILDDIR)/debug

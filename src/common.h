@@ -3,12 +3,11 @@
 /// common.h
 ///
 
-
 #ifndef _COMMON_H_
 #define _COMMON_H_
 
 #include <wx/platform.h>
-#include "version.h"
+//#include "version.h"
 
 
 //#define _UNICODE

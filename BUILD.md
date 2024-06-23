@@ -1,7 +1,7 @@
 
 # WAVTOOL
 
-#### Copyright(C) Sasaji 2011-2019 All Rights Reserved.
+#### Copyright(C) Sasaji 2011-2021 All Rights Reserved.
 
 ------------------------------------------------------------------------------
 
@@ -30,8 +30,11 @@
      ja/ ................... 日本語用
       wavtool.po ........... 翻訳ファイル
       wavtool.mo ........... 翻訳ファイル
-    wavtool/ ............... ソースファイル
+    src/ ................... ソースファイル
      res/ .................. リソースファイル
+    cp_exefile.bat ......... binフォルダ下に実行ファイル＆リソースをコピー
+    cp_exefile.sh .......... binフォルダ下に実行ファイル＆リソースをコピー
+    doxygen.doxy ........... Doxygen用設定ファイル
     README.md .............. Readme
 
  + *.cpp ... BOM *付き* のUTF-8エンコードファイル
@@ -268,10 +271,10 @@
 
 ------------------------------------------------------------------------------
 
-連絡先：
-  Sasaji (sasaji@s-sasaji.ddo.jp)
-  http://s-sasaji.ddo.jp/bml3mk5/
-  (Twitter: http://twitter.com/bml3mk5)
+ MailTo: Sasaji (sasaji@s-sasaji.ddo.jp)
+ * My WebPage: http://s-sasaji.ddo.jp/bml3mk5/
+ * GitHub:     https://github.com/bml3mk5/WavTool
+ * X(Twitter): https://x.com/bml3mk5
 
 ------------------------------------------------------------------------------
 
