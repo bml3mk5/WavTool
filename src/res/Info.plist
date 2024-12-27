@@ -27,11 +27,11 @@
 	<key>CFBundleShortVersionString</key>
 	<string>APPLICATION_VERSION</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Wavtool version APPLICATION_VERSION, (c) 2011-2018 Sasaji</string>
+	<string>Wavtool version APPLICATION_VERSION, (c) 2011-2024 Sasaji</string>
 	<key>CFBundleLongVersionString</key>
-	<string>APPLICATION_VERSION, (c) 2011-2018 Sasaji</string>
+	<string>APPLICATION_VERSION, (c) 2011-2024 Sasaji</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright 2011-2018 Sasaji</string>
+	<string>Copyright 2011-2024 Sasaji</string>
 	<key>LSRequiresCarbon</key>
 	<true/>
 	<key>CSResourcesFileMapped</key>

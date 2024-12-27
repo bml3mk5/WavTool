@@ -1,9 +1,9 @@
 ==============================================================================
     WAVTOOL
-                                                             Version 0.6.3
-                                                                2021/06/19
+                                                             Version 0.6.5
+                                                                2024/12/28
 
-                         Copyright(C) Sasaji 2011-2021 All Rights Reserved.
+                         Copyright(C) Sasaji 2011-2024 All Rights Reserved.
 ==============================================================================
 
 ● はじめに
@@ -15,8 +15,9 @@
 
 ● 動作確認環境
 
-  ◆Windows ... Windows10 / Windows7 SP1
-  ◆MacOSX .... High Sierra(10.13.6) / El Capitan(10.11.6)
+  ◆Windows ... Windows10 (Intel)
+  ◆MacOS ..... Ventura (13.5) (Apple Silicon)
+                High Sierra (10.13.6) (Intel 64bit)
 
 ------------------------------------------------------------------------------
 
@@ -39,7 +40,7 @@
   実行時に、VC++ 2010 RUNTIMEのインストールが必要になるかもしれません。
   詳細はマイクロソフトのページで検索してください。
 
-  ◆MacOSX版
+  ◆MacOS版
 
   1. wavtool_*.dmgを解凍すると以下のファイルができます。
 
@@ -166,6 +167,18 @@
     「なし」  ......... 補正しません。
     「COS波」 ......... cos波を使用して補正します。
     「SIN波」 ......... sin波を使用して補正します。
+
+    波形ウィンドウを開いている場合、設定を変更すると直ちに波形ウィンドウも更新
+    します。
+
+  「補正波形の振幅」... 1200Hzと2400Hzの正弦波それぞれの振幅を設定します。
+                        100～5000の範囲で指定できます。デフォルトは1000です。
+
+    性質上、補正を行うと1200Hzの方が振幅が大きくなります。1200Hz側を少し小さく
+    し、2400Hz側を少し大きくすることでエラーを回避できる場合があります。
+
+    波形ウィンドウを開いている場合、設定を変更すると直ちに波形ウィンドウも更新
+    します。
 
   「エクスポート」 .... ファイルを変換し出力します。
     「実ファイル」 .... 生の情報（テープに関する付加情報を取り除いたもの）を出力。
@@ -591,12 +604,11 @@
   Windows版: (CPU: Corei7 4770S 3.1GHz / Mem: 8GB)
     Microsoft Windows10 (64ビット環境)
       Microsoft Visual C++ 2010 Express Edition
-      wxWidgets 3.1.0
+      wxWidgets 3.2.4
 
-  MacOSX版: (Mac Mini CPU: Corei5 / Mem: 4GB)
-    Mac OS X El Capitan (10.11.6 Intel x86_64)
-    Xcode 7.0 + Command Line Tools for Xcode
-      wxWidgets 3.1.0
+  MacOS版: (Mac Mini CPU: M2 / Mem: 8GB)
+    Mac OS Ventura(13.5 Apple Silicon)
+    Xcode 14 + wxWidgets 3.2.4
 
 ------------------------------------------------------------------------------
 

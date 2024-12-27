@@ -125,7 +125,7 @@ BEGIN_EVENT_TABLE(WavtoolFrame, wxFrame)
 END_EVENT_TABLE()
 
 // 翻訳用
-#define APPLE_MENU_STRING _TX("Hide wavtool"),_TX("Hide Others"),_TX("Show All"),_TX("Quit wavtool"),_TX("Services"),_TX("Preferences…")
+#define APPLE_MENU_STRING _TX("Hide wavtool"),_TX("Hide Others"),_TX("Show All"),_TX("Quit wavtool"),_TX("Services"),_TX("Preferences…"),_TX("Window")
 #define DIALOG_STRING _TX("OK"),_TX("Cancel")
 
 WavtoolFrame::WavtoolFrame(const wxString& title, const wxSize& size)
@@ -476,6 +476,7 @@ void WavtoolFrame::OnAnalyzeWave(wxCommandEvent& event)
 	if (!wav->IsOpenedDataFile()) return;
 	if (wav->GetDataFileType() != FILETYPE_WAV) return;
 
+	SuspendWaveFrame();
 	panel->DisableExportButton();
 
 	wav->AnalyzeWave();
@@ -487,6 +488,7 @@ void WavtoolFrame::OnAnalyzeWave(wxCommandEvent& event)
 	panel->UpdateBaudAndCorr();
 
 	panel->UpdateExportButton();
+	ResumeWaveFrame();
 }
 
 /// ファイル内容解析
@@ -494,6 +496,7 @@ void WavtoolFrame::OnAnalyzeFiles(wxCommandEvent& event)
 {
 	if (!wav->IsOpenedDataFile()) return;
 
+	SuspendWaveFrame();
 	panel->DisableExportButton();
 
 	wav->ExportData(FILETYPE_NO_FILE);
@@ -502,6 +505,7 @@ void WavtoolFrame::OnAnalyzeFiles(wxCommandEvent& event)
 	panel->GetTextInfo()->SetValue(text_buffer);
 
 	panel->UpdateExportButton();
+	ResumeWaveFrame();
 }
 
 /// データ種類設定ダイアログ
@@ -547,7 +551,7 @@ void WavtoolFrame::OnSetsBaudRate(wxCommandEvent& event)
 		break;
 	}
 	panel->UpdateBaudAndCorr();
-	UpdateWaveFrame();
+	UpdateWaveFrame(false);
 }
 
 /// 倍速FSK設定
@@ -558,7 +562,7 @@ void WavtoolFrame::OnSetsBaudDblFsk(wxCommandEvent& event)
 
 	UpdateSettingMenu();
 	panel->UpdateBaudAndCorr();
-	UpdateWaveFrame();
+	UpdateWaveFrame(false);
 }
 
 /// 波形補正設定
@@ -567,7 +571,7 @@ void WavtoolFrame::OnSetsCorrectType(wxCommandEvent& event)
 	int id = event.GetId();
 	wav->GetParam().SetCorrectType(id-IDM_SETS_CORRECT_NONE);
 	panel->UpdateBaudAndCorr();
-	UpdateWaveFrame();
+	UpdateWaveFrame(false);
 }
 
 /// 設定ダイアログ
@@ -580,7 +584,7 @@ void WavtoolFrame::OnConfigure(wxCommandEvent& WXUNUSED(event))
 
 	UpdateMenu(menuSets);
 	panel->UpdateBaudAndCorr();
-	UpdateWaveFrame();
+	UpdateWaveFrame(false);
 }
 
 // Waveウィンドウを開く
@@ -601,11 +605,29 @@ WaveFrame *WavtoolFrame::GetWaveFrame()
 }
 
 /// 波形ウィンドウを更新
-void WavtoolFrame::UpdateWaveFrame()
+void WavtoolFrame::UpdateWaveFrame(bool first)
 {
 	WaveFrame *wavewin = GetWaveFrame();
 	if (wavewin) {
-		wavewin->Update();
+		wavewin->Update(first);
+	}
+}
+
+/// 波形ウィンドウの更新を一時停止
+void WavtoolFrame::SuspendWaveFrame()
+{
+	WaveFrame *wavewin = GetWaveFrame();
+	if (wavewin) {
+		wavewin->SuspendDrawing();
+	}
+}
+
+/// 波形ウィンドウの更新を再開
+void WavtoolFrame::ResumeWaveFrame()
+{
+	WaveFrame *wavewin = GetWaveFrame();
+	if (wavewin) {
+		wavewin->ResumeDrawing();
 	}
 }
 
@@ -635,7 +657,7 @@ void WavtoolFrame::OpenDataFile(wxString &path)
 	UpdateMenu(menuSets);
 
 	// update wave window
-	UpdateWaveFrame();
+	UpdateWaveFrame(true);
 }
 
 void WavtoolFrame::OpenedDataFile()
@@ -742,12 +764,14 @@ void WavtoolFrame::ExportFile(int id)
 			return;
 		}
 		//
+		SuspendWaveFrame();
 		panel->DisableExportButton();
 
 		rt = wav->ExportData();
 		wav->CloseOutFile();
 
 		panel->UpdateExportButton();
+		ResumeWaveFrame();
 
 		if (!rt) {
 			// cancel button or error
@@ -784,6 +808,9 @@ BEGIN_EVENT_TABLE(WavtoolPanel, wxPanel)
 	EVT_RADIOBUTTON(IDC_RADIO_CORR_NONE, WavtoolPanel::OnSetsCorrectType)
 	EVT_RADIOBUTTON(IDC_RADIO_CORR_COSW, WavtoolPanel::OnSetsCorrectType)
 	EVT_RADIOBUTTON(IDC_RADIO_CORR_SINW, WavtoolPanel::OnSetsCorrectType)
+
+	EVT_SPINCTRL(IDC_SPIN_CORRAMP1200, WavtoolPanel::OnSetsCorrectAmp)
+	EVT_SPINCTRL(IDC_SPIN_CORRAMP2400, WavtoolPanel::OnSetsCorrectAmp)
 
 	EVT_BUTTON(IDC_BTN_ANALYZE_WAV, WavtoolPanel::OnAnalyzeWave)
 	EVT_BUTTON(IDC_BTN_ANALYZE_FILES, WavtoolPanel::OnAnalyzeFiles)
@@ -836,6 +863,10 @@ WavtoolPanel::WavtoolPanel(WavtoolFrame *parent)
 	hbox->Add(chkDblFsk);
 	hboxAll->Add(hbox);
 
+	szrAll->Add(hboxAll);
+
+	hboxAll = new wxBoxSizer(wxHORIZONTAL); 
+
 	// 補正
 	hbox = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY, _("Correct")), wxHORIZONTAL);
 	radCorrNone = new wxRadioButton(this, IDC_RADIO_CORR_NONE,  _("None"), pos, size, wxRB_GROUP);
@@ -844,6 +875,24 @@ WavtoolPanel::WavtoolPanel(WavtoolFrame *parent)
 	hbox->Add(radCorrNone);
 	hbox->Add(radCorrCosw);
 	hbox->Add(radCorrSinw);
+	hboxAll->Add(hbox);
+
+	// 補正波の振幅
+	wxSizerFlags flags = wxSizerFlags().Border(wxLEFT, 4).Border(wxRIGHT, 4);
+#ifndef __WXGTK__
+	size.x = 64;
+#endif
+	hbox = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY, _("Amplitude of Correct Wave")), wxHORIZONTAL);
+	hbox->Add(new wxStaticText(this, wxID_ANY, _T("1200Hz")), flags);
+	spinCorrAmp[0] = new wxSpinCtrl(this, IDC_SPIN_CORRAMP1200, wxEmptyString, wxDefaultPosition, size);
+	hbox->Add(spinCorrAmp[0], flags);
+	hbox->Add(new wxStaticText(this, wxID_ANY, _T("2400Hz")), flags);
+	spinCorrAmp[1] = new wxSpinCtrl(this, IDC_SPIN_CORRAMP2400, wxEmptyString, wxDefaultPosition, size);
+	hbox->Add(spinCorrAmp[1], flags);
+	spinCorrAmp[0]->SetRange(100, 5000);
+	spinCorrAmp[1]->SetRange(100, 5000);
+	spinCorrAmp[0]->SetIncrement(100);
+	spinCorrAmp[1]->SetIncrement(100);
 	hboxAll->Add(hbox);
 
 	szrAll->Add(hboxAll);
@@ -929,7 +978,7 @@ void WavtoolPanel::OnSetsBaudRate(wxCommandEvent& event)
 		break;
 	}
 	parent->UpdateSettingMenu();
-	parent->UpdateWaveFrame();
+	parent->UpdateWaveFrame(false);
 }
 
 /// 波形補正設定
@@ -941,7 +990,18 @@ void WavtoolPanel::OnSetsCorrectType(wxCommandEvent& event)
 	int id = event.GetId();
 	wav->GetParam().SetCorrectType(id-IDC_RADIO_CORR_NONE);
 	parent->UpdateSettingMenu();
-	parent->UpdateWaveFrame();
+	parent->UpdateWaveFrame(false);
+}
+
+/// 補正波の振幅
+void WavtoolPanel::OnSetsCorrectAmp(wxSpinEvent& event)
+{
+	WavtoolFrame *parent = GetFrame();
+	ParseWav *wav = parent->GetParseWav();
+
+	int num = event.GetId() - IDC_SPIN_CORRAMP1200;
+	wav->GetParam().SetCorrectAmp(num, spinCorrAmp[num]->GetValue());
+	parent->UpdateWaveFrame(false);
 }
 
 /// 波形解析
@@ -1079,6 +1139,11 @@ void WavtoolPanel::UpdateBaudAndCorr()
 		radCorrNone->SetValue(true);
 		break;
 	}
+
+	num = wav->GetParam().GetCorrectAmp(0);
+	spinCorrAmp[0]->SetValue(num);
+	num = wav->GetParam().GetCorrectAmp(1);
+	spinCorrAmp[1]->SetValue(num);
 }
 
 void WavtoolPanel::UpdateBaudStr()

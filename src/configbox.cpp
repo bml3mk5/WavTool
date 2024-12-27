@@ -38,7 +38,11 @@ ConfigBox::ConfigBox(wxWindow* parent, wxWindowID id)
 
 
 	wxBoxSizer *szrWav2L3c = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY, _("How to parse a wav file")), wxVERTICAL);
+#ifdef __WXGTK__
+	wxSize size(-1,-1);
+#else
 	wxSize size(64,-1);
+#endif
 	gszr = new wxFlexGridSizer(2, 4, 0, 0);
 	gszr->Add(new wxStaticText(this, wxID_ANY, _T("")), flags);
 	gszr->Add(new wxStaticText(this, wxID_ANY, _T("- 1200 -"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE_HORIZONTAL), flags);
@@ -226,8 +230,10 @@ void ConfigBox::init_dialog()
 		radCorrSinw->SetValue(param.GetCorrectType() == 2);
 
 		spinCorrAmp[0]->SetRange(100, 5000);
+		spinCorrAmp[0]->SetIncrement(100);
 		spinCorrAmp[0]->SetValue(param.GetCorrectAmp(0));
 		spinCorrAmp[1]->SetRange(100, 5000);
+		spinCorrAmp[1]->SetIncrement(100);
 		spinCorrAmp[1]->SetValue(param.GetCorrectAmp(1));
 
 		//

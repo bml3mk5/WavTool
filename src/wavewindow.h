@@ -45,6 +45,9 @@ public:
 
 	void Update(bool first = true);
 
+	void SuspendDrawing();
+	void ResumeDrawing();
+
 	enum {
 		IDM_UPDATE = 1,
 		IDM_RELOAD,
@@ -84,6 +87,8 @@ private:
 
 	int measure_type;
 
+	bool suspending;
+
 	void SetScrollBarPos(int new_ux, int new_uy, int new_px, int new_py);
 	void RecalcScrollBarPos(int num, int div);
 	void OnDraw(wxDC &dc);
@@ -103,10 +108,13 @@ public:
 	void Find(bool use_msec, uint32_t sample_msec, int sample_spos);
 
 	void SetSampleNum(int num) { sample_num = num; }
-	void NeedParse(bool first) { need_parse = first ? 2 : 1; }
+	void NeedParse(bool first) { need_parse = first ? 2 : 3; }
 
 	void ChangeMeasure(int num) { measure_type = (num & 1); }
 	int GetCurrentMeasure() const { return measure_type; }
+
+	void SuspendDrawing() { suspending = true; }
+	void ResumeDrawing() { suspending = false; }
 
 	void ScrollArea(int x, int y);
 	void OnMouseLeftDown(wxMouseEvent &event);

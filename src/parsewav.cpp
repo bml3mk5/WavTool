@@ -1737,7 +1737,7 @@ PwErrType ParseWav::ViewData(int dir, double spos, CSampleArray *a_data)
 
 	outfile.SetType(FILETYPE_NO_FILE);
 
-	tmp_param.SetViewProgBox(false);
+//	tmp_param.SetViewProgBox(false);
 	tmp_param.SetDebugMode(0);
 
 	int fsk_spd = param.GetFskSpeed();
@@ -1890,9 +1890,9 @@ PwErrType ParseWav::ViewData(int dir, double spos, CSampleArray *a_data)
 		}
 	}
 
-	if (tmp_param.GetViewProgBox()) {
-		initProgress(outfile.GetType() == FILETYPE_NO_FILE ? 1 : 0, 0, 100);
-	}
+//	if (tmp_param.GetViewProgBox()) {
+//		initProgress(outfile.GetType() == FILETYPE_NO_FILE ? 1 : 0, 0, 100);
+//	}
 
 	switch(infile.GetType()) {
 	case FILETYPE_WAV:

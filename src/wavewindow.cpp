@@ -125,6 +125,20 @@ void WaveFrame::Update(bool first)
 	wxFrame::Update();
 }
 
+void WaveFrame::SuspendDrawing()
+{
+	if (panel) {
+		panel->SuspendDrawing();
+	}
+}
+
+void WaveFrame::ResumeDrawing()
+{
+	if (panel) {
+		panel->ResumeDrawing();
+	}
+}
+
 
 // Attach Event
 BEGIN_EVENT_TABLE(WavePanel, wxScrolledWindow)
@@ -152,6 +166,8 @@ WavePanel::WavePanel(wxWindow* parent, wxWindowID id, ParseWav *wav)
 	reopened = -1;
 
 	measure_type = 0;
+
+	suspending = false;
 
 	SetWindowStyle(wxHSCROLL);
 
@@ -287,6 +303,8 @@ void WavePanel::RecalcScrollBarPos(int num, int div)
 /// データ位置をさがす
 void WavePanel::Find(bool use_msec, uint32_t sample_msec, int sample_spos)
 {
+	if (suspending) return;
+
 	enum_file_type file_type = file->GetType();
 	double amagnify = 1.0;
 
@@ -425,6 +443,8 @@ double WavePanel::SelectMeasureMagnify(enum_file_type type, int measure_type)
 /// 画面描画
 void WavePanel::OnDraw(wxDC &dc)
 {
+	if (suspending) return;
+
 	wxPoint pt_view;
 	pt_view = GetViewStart();
 	pt_view.x *= SCROLLBAR_UNIT;

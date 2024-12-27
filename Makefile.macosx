@@ -133,7 +133,7 @@ sh_install: sh_exe
 	cp -p $(SH_EXE) $(RELEASEDIR)/$(APPDIR)/$(MACEXEDIR)
 	SetFile -t APPL $(RELEASEDIR)/$(APPDIR)/$(MACEXEDIR)$(EXEFILE)
 	cp -p $(SRCRES)/$(EXEFILE).icns $(RELEASEDIR)/$(APPDIR)/$(MACRESDIR)
-	sed -e 's/APPLICATION_VERSION/0.6.3/g' $(SRCRES)/Info.plist > $(RELEASEDIR)/$(APPDIR)/Contents/Info.plist
+	sed -e 's/APPLICATION_VERSION/0.6.5/g' $(SRCRES)/Info.plist > $(RELEASEDIR)/$(APPDIR)/Contents/Info.plist
 	echo "APPL????" > $(RELEASEDIR)/$(APPDIR)/Contents/PkgInfo
 	for i in $(SRCLANG)/* ;do if [ -d $$i ]; then \
 		mkdir -p $(RELEASEDIR)/$(APPDIR)/$(MACRESDIR)/$$i; cp -p $$i/*.mo $(RELEASEDIR)/$(APPDIR)/$(MACRESDIR)/$$i; \
@@ -145,7 +145,7 @@ st_install: st_exe
 	cp -p $(ST_EXE) $(RELEASEDIR)/$(APPDIR)/$(MACEXEDIR)
 	SetFile -t APPL $(RELEASEDIR)/$(APPDIR)/$(MACEXEDIR)$(EXEFILE)
 	cp -p $(SRCRES)/$(EXEFILE).icns $(RELEASEDIR)/$(APPDIR)/$(MACRESDIR)
-	sed -e 's/APPLICATION_VERSION/0.6.3/g' $(SRCRES)/Info.plist > $(RELEASEDIR)/$(APPDIR)/Contents/Info.plist
+	sed -e 's/APPLICATION_VERSION/0.6.5/g' $(SRCRES)/Info.plist > $(RELEASEDIR)/$(APPDIR)/Contents/Info.plist
 	echo "APPL????" > $(RELEASEDIR)/$(APPDIR)/Contents/PkgInfo
 	for i in $(SRCLANG)/* ;do if [ -d $$i ]; then \
 		mkdir -p $(RELEASEDIR)/$(APPDIR)/$(MACRESDIR)/$$i; cp -p $$i/*.mo $(RELEASEDIR)/$(APPDIR)/$(MACRESDIR)/$$i; \
@@ -157,7 +157,7 @@ dbg_install: dbg_exe
 	cp -p $(DBG_EXE) $(DEBUGDIR)/$(APPDIR)/$(MACEXEDIR)
 	SetFile -t APPL $(DEBUGDIR)/$(APPDIR)/$(MACEXEDIR)$(EXEFILE)
 	cp -p $(SRCRES)/$(EXEFILE).icns $(DEBUGDIR)/$(APPDIR)/$(MACRESDIR)
-	sed -e 's/APPLICATION_VERSION/0.6.3/g' $(SRCRES)/Info.plist > $(DEBUGDIR)/$(APPDIR)/Contents/Info.plist
+	sed -e 's/APPLICATION_VERSION/0.6.5/g' $(SRCRES)/Info.plist > $(DEBUGDIR)/$(APPDIR)/Contents/Info.plist
 	echo "APPL????" > $(DEBUGDIR)/$(APPDIR)/Contents/PkgInfo
 	(mkdir -p $(DEBUGDIR)/$(APPDIR)/$(MACRESDIR)/$(LANGDIR)/; cp -pR $(SRCLANG) $(DEBUGDIR)/$(APPDIR)/$(MACRESDIR)/$(LANGDIR)/; exit 0)
 	for i in $(SRCLANG)/* ;do if [ -d $$i ]; then \

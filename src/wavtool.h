@@ -10,6 +10,7 @@
 #include "common.h"
 #include <wx/wx.h>
 #include <wx/dnd.h>
+#include <wx/spinctrl.h>
 #include "config.h"
 #include "parsewav.h"
 
@@ -110,7 +111,9 @@ public:
 	void UpdateSettingMenu();
 	void UpdateMenuRecentFiles();
 
-	void UpdateWaveFrame();
+	void UpdateWaveFrame(bool first);
+	void SuspendWaveFrame();
+	void ResumeWaveFrame();
 
 	// properties
 	WavtoolPanel *GetWavtoolPanel() { return panel; }
@@ -181,6 +184,7 @@ private:
 	wxRadioButton *radCorrNone;
 	wxRadioButton *radCorrCosw;
 	wxRadioButton *radCorrSinw;
+	wxSpinCtrl *spinCorrAmp[2];
 	wxButton *btnAnalyzeWav;
 	wxButton *btnAnalyzeFile;
 
@@ -196,6 +200,7 @@ public:
 	void OnClickExport(wxCommandEvent& event);
 	void OnSetsBaudRate(wxCommandEvent& event);
 	void OnSetsCorrectType(wxCommandEvent& event);
+	void OnSetsCorrectAmp(wxSpinEvent& event);
 	void OnAnalyzeWave(wxCommandEvent& event);
 	void OnAnalyzeFiles(wxCommandEvent& event);
 
@@ -224,7 +229,9 @@ public:
 		IDC_CHK_BAUD_DBL_FSK,
 		IDC_RADIO_CORR_NONE = 23,
 		IDC_RADIO_CORR_COSW,
-		IDC_RADIO_CORR_SINW
+		IDC_RADIO_CORR_SINW,
+		IDC_SPIN_CORRAMP1200,
+		IDC_SPIN_CORRAMP2400
 	};
 
 	DECLARE_EVENT_TABLE()

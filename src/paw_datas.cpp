@@ -184,7 +184,10 @@ void CSampleArray::Clear()
 /// @param[in] pos 位置
 const CSampleData &CSampleArray::At(int pos) const
 {
-	if (m_datas && 0 <= pos && pos < m_size) {
+#ifdef USE_SAMPLEARRAY_POINTER
+	if (!m_datas) return;
+#endif
+	if (0 <= pos && pos < m_size) {
 		return m_datas[pos];
 	} else {
 		return m_dummy;
@@ -220,7 +223,10 @@ int CSampleArray::FreeSize() const
 /// @brief 指定位置のデータポインタを返す
 CSampleData *CSampleArray::GetPtr(int pos)
 {
-	if (m_datas && 0 <= pos && pos < m_size) {
+#ifdef USE_SAMPLEARRAY_POINTER
+	if (!m_datas) return;
+#endif
+	if (0 <= pos && pos < m_size) {
 		return &m_datas[pos];
 	} else {
 		return NULL;
@@ -252,7 +258,10 @@ CSampleData *CSampleArray::GetWritePtr(int offset)
 /// @param[in] val 追加するデータ
 void CSampleArray::Add(const CSampleData &val)
 {
-	if (m_datas && m_w_pos < m_size) {
+#ifdef USE_SAMPLEARRAY_POINTER
+	if (!m_datas) return;
+#endif
+	if (m_w_pos < m_size) {
 		m_datas[m_w_pos] = val;
 		m_w_pos++;
 		m_total_w_pos++;
