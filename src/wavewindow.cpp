@@ -2,7 +2,8 @@
 ///
 /// @brief 波形ウィンドウ
 ///
-
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #include "wavewindow.h"
 #include "findposbox.h"
 #include "utils.h"
@@ -74,7 +75,7 @@ void WaveFrame::OnUpdate(wxCommandEvent &event)
 }
 void WaveFrame::OnReload(wxCommandEvent &event)
 {
-	Update(true);
+	UpdateAll(true);
 }
 void WaveFrame::OnZoomIn(wxCommandEvent &event)
 {
@@ -116,7 +117,7 @@ void WaveFrame::OnUpdateMenu(wxMenuEvent &event)
 	mi->Enable(zo);
 }
 
-void WaveFrame::Update(bool first)
+void WaveFrame::UpdateAll(bool first)
 {
 	if (panel) {
 		panel->NeedParse(first);
@@ -534,6 +535,9 @@ void WavePanel::OnDraw(wxDC &dc)
 //	wxPoint sn_data_pt(-1, -1);
 //	wxPoint b_data_pt(-1, -1);
 
+	dc.SetBackground(*wxWHITE_BRUSH);
+	dc.Clear();
+
 	dc.SetPen(*wxBLUE_PEN);
 	dc.DrawLine(view_left, mw_bound, view_right, mw_bound);
 	dc.DrawLine(view_left, w_ybase, view_right, w_ybase);
@@ -602,49 +606,50 @@ void WavePanel::OnDraw(wxDC &dc)
 	int a_exp = 2;
 
 	if (file_type == FILETYPE_WAV) {
-		WaveDrawer drawer(w_data[0], apitch, view_right, wmagnify * amagnify, w_ybase, w_yamp, false);
+		WaveDrawer drawer(w_data[0], apitch, view_right, wmagnify * amagnify, 0.5, w_ybase, w_yamp, false);
 		drawer.Draw(dc, a_start_pos, a_exp);
 		if (correct_type > 0) {
-			WaveDrawer drawer(w_data[1], apitch, view_right, wmagnify * amagnify, w_ybase, w_yamp, true);
+			WaveDrawer drawer(w_data[1], apitch, view_right, wmagnify * amagnify, 0.5, w_ybase, w_yamp, true);
 			drawer.Draw(dc, a_start_pos, a_exp);
 		}
 	}
 
 	if (file_type == FILETYPE_L3C) {
-		FirstSampleDrawer drawer(c_data, apitch, view_right, wmagnify * amagnify, c_ybase, h);
+		FirstSampleDrawer drawer(c_data, apitch, view_right, wmagnify * amagnify, 0.75, c_ybase, h);
 		drawer.Draw(dc, a_start_pos, a_exp);
 	} else if (file_type < FILETYPE_L3C) {
 		a_exp *= w_data[0]->GetRate() / c_data->GetRate();
-		SampleDrawer drawer(a_data, c_data, apitch, view_right, wmagnify * amagnify, c_ybase, h);
+		SampleDrawer drawer(a_data, c_data, apitch, view_right, wmagnify * amagnify, 0.75, c_ybase, h);
 		drawer.Draw(dc, a_start_pos, a_exp);
 	}
 
 	if (file_type == FILETYPE_L3B || file_type == FILETYPE_T9X) {
-		FirstSampleDrawer drawer(s_data, apitch, view_right, wmagnify * amagnify, s_ybase, h);
+		FirstSampleDrawer drawer(s_data, apitch, view_right, wmagnify * amagnify, 0.5, s_ybase, h);
 		drawer.Draw(dc, a_start_pos, a_exp);
 	} else if (file_type < FILETYPE_L3B) {
 		a_exp *= 4;
-		SampleDrawer drawer(a_data, s_data, apitch, view_right, wmagnify * amagnify, s_ybase, h);
+		SampleDrawer drawer(a_data, s_data, apitch, view_right, wmagnify * amagnify, 0.5, s_ybase, h);
 		drawer.Draw(dc, a_start_pos, a_exp);
 	}
 
 	a_exp *= 4;
-	SampleDrawer sn_drawer(a_data, sn_data, apitch, view_right, wmagnify * amagnify, sn_ybase, h);
+	SampleDrawer sn_drawer(a_data, sn_data, apitch, view_right, wmagnify * amagnify, 0.25, sn_ybase, h);
 	sn_drawer.Draw(dc, a_start_pos, a_exp);
 
 	a_exp *= 4;
-	BinaryDrawer b_drawer(a_data, b_data, apitch, view_right, wmagnify * amagnify, b_ybase, h);
+	BinaryDrawer b_drawer(a_data, b_data, apitch, view_right, wmagnify * amagnify, 0.25, b_ybase, h);
 	b_drawer.Draw(dc, a_start_pos, a_exp);
 }
 
-/// @param [in] a_data 元になるデータ
-/// @param [in] data   描画対象データ
-/// @param [in] left   X軸の左端
-/// @param [in] right  X軸の右端
-/// @param [in] xmag   X軸の倍率
-/// @param [in] ybase  Y軸の描画中心
-/// @param [in] height Y軸の描画範囲(ybase±heightが範囲)
-SampleDrawer::SampleDrawer(CSampleArray *a_data, CSampleArray *data, wxCoord left, wxCoord right, double xmag, wxCoord ybase, wxCoord height)
+/// @param [in] a_data      元になるデータ
+/// @param [in] data        描画対象データ
+/// @param [in] left        X軸の左端
+/// @param [in] right       X軸の右端
+/// @param [in] xmag        X軸の倍率
+/// @param [in] show_tmag   数値を表示するX倍率
+/// @param [in] ybase       Y軸の描画中心
+/// @param [in] height      Y軸の描画範囲(ybase±heightが範囲)
+SampleDrawer::SampleDrawer(CSampleArray *a_data, CSampleArray *data, wxCoord left, wxCoord right, double xmag, double show_tmag, wxCoord ybase, wxCoord height)
 {
 	m_a_data = a_data;
 	m_data = data;
@@ -652,6 +657,7 @@ SampleDrawer::SampleDrawer(CSampleArray *a_data, CSampleArray *data, wxCoord lef
 	m_left = left;
 	m_right = right;
 	m_xmag = xmag;
+	m_show_tmag = show_tmag;
 	m_ybase = ybase;
 	m_height = height;
 }
@@ -733,6 +739,7 @@ void SampleDrawer::DrawOnePos(wxDC &dc, int data_spos, int a_data_spos, wxCoord 
 	}
 
 	wxCoord y = m_ybase + m_height * dir;
+	dc.SetPen(err ? *wxRED_PEN : *wxBLACK_PEN);
 	dc.DrawLine(x, m_ybase - m_height, x, m_ybase + m_height);
 	dc.DrawLine(x, y, next_x, y);
 
@@ -743,20 +750,23 @@ void SampleDrawer::DrawOnePos(wxDC &dc, int data_spos, int a_data_spos, wxCoord 
 //	}
 //	prev_pt.x = x;
 //	prev_pt.y = y;
-	dc.SetTextForeground(err ? *wxRED : *wxBLACK);
-	dc.DrawText(str, x, m_ybase - m_height);
+	if (m_xmag >= m_show_tmag) {
+		dc.SetTextForeground(err ? *wxRED : *wxBLACK);
+		dc.DrawText(str, x, m_ybase - m_height);
+	}
 }
 
 //
 
-/// @param [in] data   描画対象データ
-/// @param [in] left   X軸の左端
-/// @param [in] right  X軸の右端
-/// @param [in] xmag   X軸の倍率
-/// @param [in] ybase  Y軸の描画中心
-/// @param [in] height Y軸の描画範囲(ybase±heightが範囲)
-FirstSampleDrawer::FirstSampleDrawer(CSampleArray *data, wxCoord left, wxCoord right, double xmag, wxCoord ybase, wxCoord height)
-	: SampleDrawer(NULL, data, left, right, xmag, ybase, height)
+/// @param [in] data        描画対象データ
+/// @param [in] left        X軸の左端
+/// @param [in] right       X軸の右端
+/// @param [in] xmag        X軸の倍率
+/// @param [in] show_tmag   数値を表示するX倍率
+/// @param [in] ybase       Y軸の描画中心
+/// @param [in] height      Y軸の描画範囲(ybase±heightが範囲)
+FirstSampleDrawer::FirstSampleDrawer(CSampleArray *data, wxCoord left, wxCoord right, double xmag, double show_tmag, wxCoord ybase, wxCoord height)
+	: SampleDrawer(NULL, data, left, right, xmag, show_tmag, ybase, height)
 {
 }
 /// 描画
@@ -804,8 +814,8 @@ void FirstSampleDrawer::DrawOneX(wxDC &dc, int a_data_spos, wxCoord x)
 
 //
 
-WaveDrawer::WaveDrawer(CSampleArray *data, wxCoord left, wxCoord right, double xmag, wxCoord ybase, wxCoord height, bool correct)
-	: FirstSampleDrawer(data, left, right, xmag, ybase, height)
+WaveDrawer::WaveDrawer(CSampleArray *data, wxCoord left, wxCoord right, double xmag, double show_tmag, wxCoord ybase, wxCoord height, bool correct)
+	: FirstSampleDrawer(data, left, right, xmag, show_tmag, ybase, height)
 {
 	m_correct = correct;
 	m_prev_pt.x = 0;
@@ -841,8 +851,8 @@ void WaveDrawer::DrawOneX(wxDC &dc, int a_data_spos, wxCoord x)
 
 //
 
-BinaryDrawer::BinaryDrawer(CSampleArray *a_data, CSampleArray *data, wxCoord left, wxCoord right, double xmag, wxCoord ybase, wxCoord height)
-	: SampleDrawer(a_data, data, left, right, xmag, ybase, height)
+BinaryDrawer::BinaryDrawer(CSampleArray *a_data, CSampleArray *data, wxCoord left, wxCoord right, double xmag, double show_tmag, wxCoord ybase, wxCoord height)
+	: SampleDrawer(a_data, data, left, right, xmag, show_tmag, ybase, height)
 {
 }
 /// １サンプルデータを描画
@@ -885,10 +895,13 @@ void BinaryDrawer::DrawOnePos(wxDC &dc, int data_spos, int a_data_spos, wxCoord 
 		str += _T(" Frame Error");
 	}
 
+	dc.SetPen(err ? *wxRED_PEN : *wxBLACK_PEN);
 	dc.DrawLine(x, m_ybase - m_height, next_x, m_ybase - m_height);
 	dc.DrawLine(x, m_ybase + m_height, next_x, m_ybase + m_height);
 	dc.DrawLine(x, m_ybase - m_height, x, m_ybase + m_height);
 
-	dc.SetTextForeground(err ? *wxRED : *wxBLACK);
-	dc.DrawText(str, x, m_ybase - m_height);
+	if (m_xmag >= m_show_tmag) {
+		dc.SetTextForeground(err ? *wxRED : *wxBLACK);
+		dc.DrawText(str, x, m_ybase - m_height);
+	}
 }

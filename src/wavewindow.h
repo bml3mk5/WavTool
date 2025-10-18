@@ -1,9 +1,9 @@
 ﻿/// @file wavewindow.h
 ///
-/// wave window
+/// @brief 波形ウィンドウ
 ///
-
-
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #ifndef _WAVEWINDOW_H_
 #define _WAVEWINDOW_H_
 
@@ -43,7 +43,7 @@ public:
 
 	void OnUpdateMenu(wxMenuEvent &event);
 
-	void Update(bool first = true);
+	void UpdateAll(bool first = true);
 
 	void SuspendDrawing();
 	void ResumeDrawing();
@@ -99,7 +99,7 @@ private:
 public:
 	WavePanel(wxWindow* parent, wxWindowID id,	ParseWav *wav);
 
-	void OnPaint(wxPaintEvent &event);
+//	void OnPaint(wxPaintEvent &event);
 
 	void ZoomIn();
 	void ZoomOut();
@@ -134,6 +134,7 @@ protected:
 	int m_data_pos;
 
 	double m_xmag;
+	double m_show_tmag;
 	wxCoord m_ybase;
 	wxCoord m_left;
 	wxCoord m_right;
@@ -143,7 +144,7 @@ protected:
 	virtual void DrawOnePos(wxDC &dc, int data_spos, int a_data_spos, wxCoord x);
 
 public:
-	SampleDrawer(CSampleArray *a_data, CSampleArray *data, wxCoord left, wxCoord right, double xmag, wxCoord ybase, wxCoord height);
+	SampleDrawer(CSampleArray *a_data, CSampleArray *data, wxCoord left, wxCoord right, double xmag, double show_tmag, wxCoord ybase, wxCoord height);
 	virtual ~SampleDrawer();
 
 	virtual void Draw(wxDC &dc, int a_start_pos, int a_exp);
@@ -155,7 +156,7 @@ class FirstSampleDrawer : public SampleDrawer
 protected:
 	virtual void DrawOneX(wxDC &dc, int a_data_spos, wxCoord x);
 public:
-	FirstSampleDrawer(CSampleArray *data, wxCoord left, wxCoord right, double xmag, wxCoord ybase, wxCoord height);
+	FirstSampleDrawer(CSampleArray *data, wxCoord left, wxCoord right, double xmag, double show_tmag, wxCoord ybase, wxCoord height);
 
 	virtual void Draw(wxDC &dc, int a_start_pos, int a_exp);
 };
@@ -170,7 +171,7 @@ protected:
 
 	virtual void DrawOneX(wxDC &dc, int a_data_spos, wxCoord x);
 public:
-	WaveDrawer(CSampleArray *data, wxCoord left, wxCoord right, double xmag, wxCoord ybase, wxCoord height, bool correct);
+	WaveDrawer(CSampleArray *data, wxCoord left, wxCoord right, double xmag, double show_tmag, wxCoord ybase, wxCoord height, bool correct);
 };
 
 /// バイナリデータ描画クラス
@@ -179,7 +180,7 @@ class BinaryDrawer : public SampleDrawer
 protected:
 	virtual void DrawOnePos(wxDC &dc, int data_spos, int a_data_spos, wxCoord x);
 public:
-	BinaryDrawer(CSampleArray *a_data, CSampleArray *data, wxCoord left, wxCoord right, double xmag, wxCoord ybase, wxCoord height);
+	BinaryDrawer(CSampleArray *a_data, CSampleArray *data, wxCoord left, wxCoord right, double xmag, double show_tmag, wxCoord ybase, wxCoord height);
 };
 
 

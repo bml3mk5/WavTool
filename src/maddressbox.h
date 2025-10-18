@@ -1,9 +1,9 @@
 ﻿/// @file maddressbox.h
 ///
-/// address setting dialog for machine data
+/// @brief 開始アドレス設定ダイアログ
 ///
-
-
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #ifndef _MADDRESSBOX_H_
 #define _MADDRESSBOX_H_
 

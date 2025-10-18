@@ -1,9 +1,10 @@
 ﻿/// @file paw_defs.cpp
 ///
-/// @author Sasaji
+/// @brief 定義値
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2019.08.01
 ///
-
 #include "paw_defs.h"
 #include "paw_file.h"
 

@@ -11,6 +11,7 @@ add_executable(${PROJECT_NAME}
 	${SRCDIR}/progressbox.cpp
 	${SRCDIR}/findposbox.cpp
 	${SRCDIR}/maddressbox.cpp
+	${SRCDIR}/mymenu.cpp
 	${SRCDIR}/rftypebox.cpp
 	${SRCDIR}/configbox.cpp
 	${SRCDIR}/parsewav.cpp

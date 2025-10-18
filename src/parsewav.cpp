@@ -2,6 +2,8 @@
 ///
 /// @brief waveファイルを解析
 ///
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #include "parsewav.h"
 #include <wx/filename.h>
 #include "utils.h"
@@ -1239,7 +1241,7 @@ int ParseWav::encode_phase2(SerialData *s_data, CarrierData *c_data, enum_phase 
 /// @return フェーズ番号
 int ParseWav::encode_phase1(CarrierData *c_data, bool end_data)
 {
-	int pos = 0;
+//	int pos = 0;
 	int step = 0;
 	bool last = false;
 	bool break_data = false;
@@ -1268,7 +1270,7 @@ int ParseWav::encode_phase1(CarrierData *c_data, bool end_data)
 		}
 
 		step = wave_parser.EncodeToWave(c_data, wav_data, 20);
-		pos += step;
+//		pos += step;
 
 		if (c_data->IsTail()) {
 			last = true;
@@ -1276,7 +1278,7 @@ int ParseWav::encode_phase1(CarrierData *c_data, bool end_data)
 
 		if (outfile.GetType() == FILETYPE_WAV) {
 			conv.OutConvSampleData(wav_data, 48000, 1, step, outwav.GetSampleRate(), outwav.GetBlockSize(), outfile);
-			pos = 0;
+//			pos = 0;
 		}
 
 		if (last) {

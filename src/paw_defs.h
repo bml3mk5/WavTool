@@ -1,10 +1,10 @@
 ﻿/// @file paw_defs.h
 ///
-/// @author Sasaji
+/// @brief 定義値
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2019.08.01
 ///
-
-
 #ifndef _PARSEWAV_DEFS_H_
 #define _PARSEWAV_DEFS_H_
 

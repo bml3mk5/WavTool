@@ -1,12 +1,15 @@
 ﻿/// @file wavtool.cpp
 ///
-/// wavtool.cpp
+/// @brief メインウィンドウ
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 ///
 #include "parsewav.h"
 #include "wavtool.h"
 #include "configbox.h"
 #include <wx/filename.h>
 #include "wavewindow.h"
+#include "mymenu.h"
 #include "res/wavtool.xpm"
 #include "version.h"
 
@@ -49,10 +52,10 @@ void WavtoolApp::SetAppPath()
 #ifdef __WXOSX__
 	if (app_path.Find(_T("MacOS")) >= 0) {
 		wxFileName file = wxFileName::FileName(app_path+"../../../");
-		file.Normalize();
+		file.Normalize(wxPATH_NORM_ALL);
 		ini_path = file.GetPath(wxPATH_GET_SEPARATOR);
 		file = wxFileName::FileName(app_path+"../../Contents/Resources/");
-		file.Normalize();
+		file.Normalize(wxPATH_NORM_ALL);
 		res_path = file.GetPath(wxPATH_GET_SEPARATOR);
 	} else
 #endif
@@ -125,8 +128,8 @@ BEGIN_EVENT_TABLE(WavtoolFrame, wxFrame)
 END_EVENT_TABLE()
 
 // 翻訳用
-#define APPLE_MENU_STRING _TX("Hide wavtool"),_TX("Hide Others"),_TX("Show All"),_TX("Quit wavtool"),_TX("Services"),_TX("Preferences…"),_TX("Window")
-#define DIALOG_STRING _TX("OK"),_TX("Cancel")
+#define DIALOG_BUTTON_STRING _TX("OK"),_TX("Cancel")
+#define APPLE_MENU_STRING _TX("Hide wavtool"),_TX("Hide Others"),_TX("Show All"),_TX("Quit wavtool"),_TX("Services"),_TX("Preferences…"),_TX("Window"),_TX("Minimize"),_TX("Zoom"),_TX("Bring All to Front")
 
 WavtoolFrame::WavtoolFrame(const wxString& title, const wxSize& size)
        : wxFrame(NULL, -1, title, wxDefaultPosition, size)
@@ -141,15 +144,15 @@ WavtoolFrame::WavtoolFrame(const wxString& title, const wxSize& size)
 //	wavewin = NULL;
 
 	// menu
-	menuFile = new wxMenu;
-	menuSets = new wxMenu;
-	menuHelp = new wxMenu;
-	wxMenu *smenu;
+	menuFile = new MyMenu;
+	menuSets = new MyMenu;
+	menuHelp = new MyMenu;
+	MyMenu *smenu;
 
-	menuFile->Append( IDM_OPEN_FILE, _("&Open...") );
+	menuFile->Append( IDM_OPEN_FILE, _("&Open...\tCtrl+O") );
 	menuFile->Append( IDM_CLOSE_FILE, _("&Close") );
 	menuFile->AppendSeparator();
-	smenu = new wxMenu;
+	smenu = new MyMenu;
 	smenu->Append( IDM_EXPORT_REAL, _("&Real File...") );
 	smenu->AppendSeparator();
 	smenu->Append( IDM_EXPORT_L3, _("&L3 File...") );
@@ -162,16 +165,16 @@ WavtoolFrame::WavtoolFrame(const wxString& title, const wxSize& size)
 	menuFile->Append( IDM_ANALYZE_WAV, _("&Analyze Wave") );
 	menuFile->Append( IDM_ANALYZE_FILES, _("Analyze &Files") );
 	menuFile->AppendSeparator();
-	menuRecentFiles = new wxMenu();
+	menuRecentFiles = new MyMenu();
 	UpdateMenuRecentFiles();
 	menuFile->AppendSubMenu(menuRecentFiles, _("&Reccent Files") );
 	menuFile->AppendSeparator();
-	menuFile->Append( wxID_EXIT, _("E&xit") );
+	menuFile->Append( wxID_EXIT, _("E&xit\tAlt+F4") );
 	// settings menu
 	menuSets->Append( IDM_SETS_RFTYPE, _("File &Type...") );
 	menuSets->Append( IDM_SETS_MACHINE, _("&Machine Code...") );
 	menuSets->AppendSeparator();
-	smenu = new wxMenu;
+	smenu = new MyMenu;
 	smenu->AppendCheckItem( IDM_SETS_BAUD_AUTO, _("&Auto Detect") );
 	smenu->AppendSeparator();
 	smenu->AppendRadioItem( IDM_SETS_BAUD_600, _T("600 ") );
@@ -182,7 +185,7 @@ WavtoolFrame::WavtoolFrame(const wxString& title, const wxSize& size)
 	smenu->AppendCheckItem( IDM_SETS_BAUD_DBLFSK, _("&Double Speed FSK") );
 	menuSets->Append( IDM_SETS_BAUD, _("&Baud Rate"), smenu );
 	menuSets->AppendSeparator();
-	smenu = new wxMenu;
+	smenu = new MyMenu;
 	smenu->AppendRadioItem( IDM_SETS_CORRECT_NONE, _("None") );
 	smenu->AppendRadioItem( IDM_SETS_CORRECT_COS, _("COS Wave") );
 	smenu->AppendRadioItem( IDM_SETS_CORRECT_SIN, _("SIN Wave") );
@@ -190,16 +193,20 @@ WavtoolFrame::WavtoolFrame(const wxString& title, const wxSize& size)
 	menuSets->AppendSeparator();
 	menuSets->Append( IDM_SETS_CONFIGURE, _("&Details...") );
 	// window menu
-	menuView = new wxMenu();
+	menuView = new MyMenu();
 	menuView->Append( IDM_WINDOW_WAVE, _("&Wave Window") );
 	// help menu
 	menuHelp->Append( wxID_ABOUT, _("&About...") );
 
 	// menu bar
-	wxMenuBar *menuBar = new wxMenuBar;
+	MyMenuBar *menuBar = new MyMenuBar;
 	menuBar->Append( menuFile, _("&File") );
 	menuBar->Append( menuSets, _("&Settings") );
 	menuBar->Append( menuView, _("&View") );
+#if defined(__WXOSX__) && wxCHECK_VERSION(3,1,2)
+	// window system menu on mac os x
+	menuBar->Append( new wxMenu(), _("&Window") );
+#endif
 	menuBar->Append( menuHelp, _("&Help") );
 
 	SetMenuBar( menuBar );
@@ -609,7 +616,7 @@ void WavtoolFrame::UpdateWaveFrame(bool first)
 {
 	WaveFrame *wavewin = GetWaveFrame();
 	if (wavewin) {
-		wavewin->Update(first);
+		wavewin->UpdateAll(first);
 	}
 }
 
@@ -945,6 +952,7 @@ void WavtoolPanel::OnSize(wxSizeEvent& event)
 {
 	wxSize size = event.GetSize();
 
+	Layout();
 	textName->SetSize(size.x, textName->GetSize().y);
 	textInfo->SetSize(size.x, size.y - textInfo->GetPosition().y);
 }

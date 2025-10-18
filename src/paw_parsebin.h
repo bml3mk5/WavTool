@@ -1,10 +1,10 @@
 ﻿/// @file paw_parsebin.h
 ///
-/// @author Sasaji
+/// @brief バイナリデータ解析
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2019.08.01
 ///
-
-
 #ifndef _PARSEWAV_PARSEBIN_H_
 #define _PARSEWAV_PARSEBIN_H_
 

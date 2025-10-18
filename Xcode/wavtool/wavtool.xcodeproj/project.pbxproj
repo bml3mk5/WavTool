@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D924DDF3295311FB0063100E /* mymenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D924DDF2295311FB0063100E /* mymenu.cpp */; };
 		D92F13A8231E37BD0039EACA /* wavtool.icns in Resources */ = {isa = PBXBuildFile; fileRef = D92F13A5231E37BD0039EACA /* wavtool.icns */; };
 		D92F13A9231E37BD0039EACA /* wavtool.xpm in Resources */ = {isa = PBXBuildFile; fileRef = D92F13A6231E37BD0039EACA /* wavtool.xpm */; };
 		D92F13DD231E382F0039EACA /* config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92F13AB231E382F0039EACA /* config.cpp */; };
@@ -56,6 +57,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D924DDF1295311FB0063100E /* mymenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mymenu.h; sourceTree = "<group>"; };
+		D924DDF2295311FB0063100E /* mymenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mymenu.cpp; sourceTree = "<group>"; };
 		D92F13A4231E37BD0039EACA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../src/res/Info.plist; sourceTree = "<group>"; };
 		D92F13A5231E37BD0039EACA /* wavtool.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = wavtool.icns; path = ../../src/res/wavtool.icns; sourceTree = "<group>"; };
 		D92F13A6231E37BD0039EACA /* wavtool.xpm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wavtool.xpm; path = ../../src/res/wavtool.xpm; sourceTree = "<group>"; };
@@ -161,55 +164,57 @@
 			isa = PBXGroup;
 			children = (
 				D92F13AA231E382F0039EACA /* common.h */,
-				D92F13AB231E382F0039EACA /* config.cpp */,
 				D92F13AC231E382F0039EACA /* config.h */,
-				D92F13AD231E382F0039EACA /* configbox.cpp */,
+				D92F13AB231E382F0039EACA /* config.cpp */,
 				D92F13AE231E382F0039EACA /* configbox.h */,
-				D92F13AF231E382F0039EACA /* errorinfo.cpp */,
+				D92F13AD231E382F0039EACA /* configbox.cpp */,
 				D92F13B0231E382F0039EACA /* errorinfo.h */,
-				D92F13B1231E382F0039EACA /* findposbox.cpp */,
+				D92F13AF231E382F0039EACA /* errorinfo.cpp */,
 				D92F13B2231E382F0039EACA /* findposbox.h */,
-				D92F13B3231E382F0039EACA /* maddressbox.cpp */,
+				D92F13B1231E382F0039EACA /* findposbox.cpp */,
 				D92F13B4231E382F0039EACA /* maddressbox.h */,
-				D92F13B5231E382F0039EACA /* parsewav.cpp */,
+				D92F13B3231E382F0039EACA /* maddressbox.cpp */,
+				D924DDF1295311FB0063100E /* mymenu.h */,
+				D924DDF2295311FB0063100E /* mymenu.cpp */,
 				D92F13B6231E382F0039EACA /* parsewav.h */,
-				D92F13B8231E382F0039EACA /* paw_datas.cpp */,
+				D92F13B5231E382F0039EACA /* parsewav.cpp */,
 				D92F13B9231E382F0039EACA /* paw_datas.h */,
-				D92F13BA231E382F0039EACA /* paw_defs.cpp */,
+				D92F13B8231E382F0039EACA /* paw_datas.cpp */,
 				D92F13BB231E382F0039EACA /* paw_defs.h */,
-				D92F13BC231E382F0039EACA /* paw_dft.cpp */,
+				D92F13BA231E382F0039EACA /* paw_defs.cpp */,
 				D92F13BD231E382F0039EACA /* paw_dft.h */,
-				D92F13BE231E382F0039EACA /* paw_file.cpp */,
+				D92F13BC231E382F0039EACA /* paw_dft.cpp */,
 				D92F13BF231E382F0039EACA /* paw_file.h */,
-				D92F13C0231E382F0039EACA /* paw_format.cpp */,
+				D92F13BE231E382F0039EACA /* paw_file.cpp */,
 				D92F13C1231E382F0039EACA /* paw_format.h */,
-				D92F13C2231E382F0039EACA /* paw_param.cpp */,
+				D92F13C0231E382F0039EACA /* paw_format.cpp */,
 				D92F13C3231E382F0039EACA /* paw_param.h */,
-				D92F13C4231E382F0039EACA /* paw_parse.cpp */,
+				D92F13C2231E382F0039EACA /* paw_param.cpp */,
 				D92F13C5231E382F0039EACA /* paw_parse.h */,
-				D92F13C6231E382F0039EACA /* paw_parsebin.cpp */,
+				D92F13C4231E382F0039EACA /* paw_parse.cpp */,
 				D92F13C7231E382F0039EACA /* paw_parsebin.h */,
-				D92F13C8231E382F0039EACA /* paw_parsecar.cpp */,
+				D92F13C6231E382F0039EACA /* paw_parsebin.cpp */,
 				D92F13C9231E382F0039EACA /* paw_parsecar.h */,
-				D92F13CA231E382F0039EACA /* paw_parseser.cpp */,
+				D92F13C8231E382F0039EACA /* paw_parsecar.cpp */,
 				D92F13CB231E382F0039EACA /* paw_parseser.h */,
-				D92F13CC231E382F0039EACA /* paw_parsewav.cpp */,
+				D92F13CA231E382F0039EACA /* paw_parseser.cpp */,
 				D92F13CD231E382F0039EACA /* paw_parsewav.h */,
-				D92F13CE231E382F0039EACA /* paw_util.cpp */,
+				D92F13CC231E382F0039EACA /* paw_parsewav.cpp */,
 				D92F13CF231E382F0039EACA /* paw_util.h */,
-				D92F13D0231E382F0039EACA /* progressbox.cpp */,
+				D92F13CE231E382F0039EACA /* paw_util.cpp */,
 				D92F13D1231E382F0039EACA /* progressbox.h */,
-				D92F13D2231E382F0039EACA /* rftypebox.cpp */,
+				D92F13D0231E382F0039EACA /* progressbox.cpp */,
 				D92F13D3231E382F0039EACA /* rftypebox.h */,
+				D92F13D2231E382F0039EACA /* rftypebox.cpp */,
 				D92F13D4231E382F0039EACA /* tchar.h */,
 				D92F13D5231E382F0039EACA /* typedef.h */,
-				D92F13D6231E382F0039EACA /* utils.cpp */,
 				D92F13D7231E382F0039EACA /* utils.h */,
+				D92F13D6231E382F0039EACA /* utils.cpp */,
 				D92F13D8231E382F0039EACA /* version.h */,
-				D92F13D9231E382F0039EACA /* wavewindow.cpp */,
 				D92F13DA231E382F0039EACA /* wavewindow.h */,
-				D92F13DB231E382F0039EACA /* wavtool.cpp */,
+				D92F13D9231E382F0039EACA /* wavewindow.cpp */,
 				D92F13DC231E382F0039EACA /* wavtool.h */,
+				D92F13DB231E382F0039EACA /* wavtool.cpp */,
 			);
 			name = Sources;
 			path = ../../src;
@@ -329,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D924DDF3295311FB0063100E /* mymenu.cpp in Sources */,
 				D92F13EB231E382F0039EACA /* paw_parsecar.cpp in Sources */,
 				D92F13EF231E382F0039EACA /* progressbox.cpp in Sources */,
 				D92F13E1231E382F0039EACA /* maddressbox.cpp in Sources */,

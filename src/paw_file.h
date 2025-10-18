@@ -1,10 +1,10 @@
 ﻿/// @file paw_file.h
 ///
-/// @author Sasaji
+/// @brief ファイル入出力
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2019.08.01
 ///
-
-
 #ifndef _PARSEWAV_FILE_H_
 #define _PARSEWAV_FILE_H_
 

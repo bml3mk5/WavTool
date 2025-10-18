@@ -2,6 +2,8 @@
 ///
 /// @brief 設定ファイル入出力
 ///
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #include "config.h"
 #include "wx/filename.h"
 #include "wx/fileconf.h"
@@ -111,7 +113,7 @@ void Config::Save()
 void Config::AddRecentFile(const wxString &val)
 {
 	wxFileName fpath = wxFileName::FileName(val);
-	wav_file_path = fpath.GetPath(wxPATH_GET_SEPARATOR);
+	wav_file_path = fpath.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR);
 	// 同じファイルがあるか
 	int pos = mRecentFiles.Index(fpath.GetFullPath());
 	if (pos >= 0) {

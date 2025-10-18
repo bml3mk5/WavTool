@@ -1,9 +1,9 @@
 ﻿/// @file wavtool.h
 ///
-/// wavtool.h
+/// @brief メインウィンドウ
 ///
-
-
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #ifndef _WAVTOOL_H_
 #define _WAVTOOL_H_
 
@@ -24,6 +24,7 @@ class WavtoolFileDropTarget;
 //class PARSEWAV::ParseWav;
 class ConfigBox;
 class WaveFrame;
+class MyMenu;
 
 /// @brief Window
 class WavtoolApp: public wxApp
@@ -51,11 +52,11 @@ class WavtoolFrame: public wxFrame
 {
 private:
 	// gui
-	wxMenu *menuFile;
-	wxMenu *menuRecentFiles;
-	wxMenu *menuSets;
-	wxMenu *menuView;
-	wxMenu *menuHelp;
+	MyMenu *menuFile;
+	MyMenu *menuRecentFiles;
+	MyMenu *menuSets;
+	MyMenu *menuView;
+	MyMenu *menuHelp;
 	WavtoolPanel *panel;
 
 	PARSEWAV::ParseWav *wav;

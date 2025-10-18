@@ -1,10 +1,10 @@
 ﻿/// @file paw_parse.h
 ///
-/// @author Sasaji
+/// @brief データ解析用の基本クラス
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2019.08.01
 ///
-
-
 #ifndef _PARSEWAV_PARSE_H_
 #define _PARSEWAV_PARSE_H_
 

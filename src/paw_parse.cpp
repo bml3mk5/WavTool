@@ -1,10 +1,10 @@
 ﻿/// @file paw_parse.cpp
 ///
-/// @author Sasaji
+/// @brief データ解析用の基本クラス
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2019.08.01
 ///
-
-
 #include "paw_parse.h"
 #include <stdio.h>
 

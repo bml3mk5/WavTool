@@ -1,9 +1,9 @@
 ==============================================================================
     WAVTOOL
-                                                             Version 0.6.5
-                                                                2024/12/28
+                                                             Version 0.6.6
+                                                                2025/10/19
 
-                         Copyright(C) Sasaji 2011-2024 All Rights Reserved.
+                         Copyright(C) Sasaji 2011-2025 All Rights Reserved.
 ==============================================================================
 
 ● はじめに
@@ -15,8 +15,8 @@
 
 ● 動作確認環境
 
-  ◆Windows ... Windows10 (Intel)
-  ◆MacOS ..... Ventura (13.5) (Apple Silicon)
+  ◆Windows ... Windows11 (Intel 64bit) / Windows10 (Intel 64bit)
+  ◆MacOS ..... Sequoia(15.6.1) (Apple Silicon)
                 High Sierra (10.13.6) (Intel 64bit)
 
 ------------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 
 # How to build the WAVTOOL
 
-#### Copyright(C) Sasaji 2011-2024 All Rights Reserved.
+#### Copyright(C) Sasaji 2011-2025 All Rights Reserved.
 
 ------------------------------------------------------------------------------
 

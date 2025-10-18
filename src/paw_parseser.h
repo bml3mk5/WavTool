@@ -1,10 +1,10 @@
 ﻿/// @file paw_parseser.h
 ///
-/// @author Sasaji
+/// @brief シリアルデータ解析
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2019.08.01
 ///
-
-
 #ifndef _PARSEWAV_PARSESER_H_
 #define _PARSEWAV_PARSESER_H_
 

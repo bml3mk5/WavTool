@@ -1,10 +1,10 @@
 ﻿/// @file paw_dft.h
 ///
-/// @author Sasaji
+/// @brief フーリエ変換
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2017.12.01
 ///
-
-
 #ifndef _PARSEWAV_DFT_H_
 #define _PARSEWAV_DFT_H_
 

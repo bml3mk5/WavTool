@@ -2,8 +2,8 @@
 ///
 /// parsewav.h
 ///
-
-
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #ifndef _PARSEWAV_H_
 #define _PARSEWAV_H_
 

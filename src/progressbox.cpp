@@ -2,6 +2,8 @@
 ///
 /// @brief プログレスダイアログ
 ///
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #include "progressbox.h"
 
 ProgressBox::ProgressBox()

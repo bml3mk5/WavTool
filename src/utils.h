@@ -1,9 +1,9 @@
 ﻿/// @file utils.h
 ///
-/// utility
+/// @brief ユーティリティ
 ///
-
-
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #ifndef _UTILS_H_
 #define _UTILS_H_
 

@@ -1,9 +1,9 @@
 ﻿/// @file config.h
 ///
-/// config.h
+/// @brief 設定ファイル入出力
 ///
-
-
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 

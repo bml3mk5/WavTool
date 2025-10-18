@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wavtool_wx\n"
-"POT-Creation-Date: 2024-12-19 19:49+0900\n"
-"PO-Revision-Date: 2024-12-19 19:49+0900\n"
+"POT-Creation-Date: 2025-10-15 20:01+0900\n"
+"PO-Revision-Date: 2025-10-15 20:42+0900\n"
 "Last-Translator: Sasaji <s-sasaji@ddo.jp>\n"
 "Language-Team: \n"
 "Language: Japanese\n"
@@ -15,504 +15,520 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: configbox.cpp:28
+#: configbox.cpp:30
 msgid "Configure"
 msgstr "設定"
 
-#: configbox.cpp:40
+#: configbox.cpp:42
 msgid "How to parse a wav file"
 msgstr "wavファイルの解析方法"
 
-#: configbox.cpp:51
+#: configbox.cpp:53
 msgid "Center(Hz)"
 msgstr "中心(Hz)"
 
-#: configbox.cpp:62
+#: configbox.cpp:64
 msgid "Error(%)"
 msgstr "誤差(%)"
 
-#: configbox.cpp:70
+#: configbox.cpp:72
 msgid "Reverse Wave"
 msgstr "波形を反転"
 
-#: configbox.cpp:71
+#: configbox.cpp:73
 msgid "Detect Half Wave"
 msgstr "半波検出"
 
-#: configbox.cpp:77 wavtool.cpp:871
+#: configbox.cpp:79 wavtool.cpp:878
 msgid "Correct"
 msgstr "補正"
 
-#: configbox.cpp:78 configbox.cpp:157
+#: configbox.cpp:80 configbox.cpp:159
 msgid "No"
 msgstr "なし"
 
-#: configbox.cpp:79 wavtool.cpp:187 wavtool.cpp:873
+#: configbox.cpp:81 wavtool.cpp:190 wavtool.cpp:880
 msgid "COS Wave"
 msgstr "COS波"
 
-#: configbox.cpp:80 wavtool.cpp:188 wavtool.cpp:874
+#: configbox.cpp:82 wavtool.cpp:191 wavtool.cpp:881
 msgid "SIN Wave"
 msgstr "SIN波"
 
-#: configbox.cpp:88 wavtool.cpp:885
+#: configbox.cpp:90 wavtool.cpp:892
 msgid "Amplitude of Correct Wave"
 msgstr "補正波形の振幅"
 
-#: configbox.cpp:107
+#: configbox.cpp:109
 msgid "Output a wav file"
 msgstr "wavファイルを出力"
 
-#: configbox.cpp:109
+#: configbox.cpp:111
 msgid "Sample Rate"
 msgstr "サンプルレート"
 
-#: configbox.cpp:112
+#: configbox.cpp:114
 msgid "Hz"
 msgstr "Hz"
 
-#: configbox.cpp:113
+#: configbox.cpp:115
 msgid "Sample Bits"
 msgstr "サンプルビット"
 
-#: configbox.cpp:116
+#: configbox.cpp:118
 msgid "bits"
 msgstr "ビット"
 
-#: configbox.cpp:121
+#: configbox.cpp:123
 msgid "DebugLogLevel"
 msgstr "デバッグログ レベル"
 
-#: configbox.cpp:127
+#: configbox.cpp:129
 msgid "Baud rate"
 msgstr "ボーレート"
 
-#: configbox.cpp:128
+#: configbox.cpp:130
 msgid "Use Double Speed FSK"
 msgstr "倍速FSKを使用"
 
-#: configbox.cpp:131 wavtool.cpp:851
+#: configbox.cpp:133 wavtool.cpp:858
 msgid "Baud"
 msgstr "ボーレート"
 
-#: configbox.cpp:143 wavtool.cpp:852
+#: configbox.cpp:145 wavtool.cpp:859
 msgid "Auto Detect"
 msgstr "自動判定"
 
-#: configbox.cpp:148
+#: configbox.cpp:150
 msgid "Bits length of one word"
 msgstr "1ワードのビット長さ"
 
-#: configbox.cpp:150
+#: configbox.cpp:152
 msgid "Data bits"
 msgstr "データビット"
 
-#: configbox.cpp:151
+#: configbox.cpp:153
 msgid "7bits"
 msgstr "7ビット"
 
-#: configbox.cpp:152
+#: configbox.cpp:154
 msgid "8bits"
 msgstr "8ビット"
 
-#: configbox.cpp:156
+#: configbox.cpp:158
 msgid "Parity"
 msgstr "パリティ"
 
-#: configbox.cpp:158
+#: configbox.cpp:160
 msgid "Even"
 msgstr "偶数"
 
-#: configbox.cpp:159
+#: configbox.cpp:161
 msgid "Odd"
 msgstr "奇数"
 
-#: configbox.cpp:163
+#: configbox.cpp:165
 msgid "Stopbit"
 msgstr "ストップビット"
 
-#: configbox.cpp:164
+#: configbox.cpp:166
 msgid "1bit"
 msgstr "1ビット"
 
-#: configbox.cpp:165
+#: configbox.cpp:167
 msgid "2bit"
 msgstr "2ビット"
 
-#: configbox.cpp:171
+#: configbox.cpp:173
 msgid "Output a data even if parity or frame error."
 msgstr "パリティまたはフレームエラーでもデータを出力する。"
 
-#: configbox.cpp:176
+#: configbox.cpp:178
 msgid "Gap size"
 msgstr "ギャップサイズ"
 
-#: configbox.cpp:177
+#: configbox.cpp:179
 msgid "Change the long gap size according to a baud rate."
 msgstr "ボーレートに応じて長いギャップサイズを変更する。"
 
-#: configbox.cpp:181
+#: configbox.cpp:183
 msgid "Real file"
 msgstr "実ファイル"
 
-#: configbox.cpp:182
+#: configbox.cpp:184
 msgid "Split files per program"
 msgstr "プログラムごとにファイルを分割する"
 
-#: configbox.cpp:183
+#: configbox.cpp:185
 msgid "Trim header and footer in machine code"
 msgstr "マシン語のヘッダ・フッタを取り除く"
 
-#: configbox.cpp:188
+#: configbox.cpp:190
 msgid "(Enable when exporting from tape image.)"
 msgstr "(テープイメージからエクスポートする時に有効です。)"
 
-#: errorinfo.cpp:30
+#: errorinfo.cpp:32
 msgid "File not found."
 msgstr "ファイルがみつかりません。"
 
-#: errorinfo.cpp:34
+#: errorinfo.cpp:36
 msgid "This is not PCM format in the wav file."
 msgstr "PCMフォーマットのwavファイルではありません。"
 
-#: errorinfo.cpp:38
+#: errorinfo.cpp:40
 msgid "Sample rate is supported between 11025 and 48000Hz."
 msgstr "サンプルレートは11025～48000Hzをサポートします。"
 
-#: errorinfo.cpp:42
+#: errorinfo.cpp:44
 msgid "Cannot write file."
 msgstr "ファイルを出力できません。"
 
-#: errorinfo.cpp:46
+#: errorinfo.cpp:48
 msgid "Cannot write debug log. Continue this process."
 msgstr "デバッグログを出力できませんが、処理を続けます。"
 
-#: errorinfo.cpp:50
+#: errorinfo.cpp:52
 msgid "File is empty."
 msgstr "ファイルが空です。"
 
-#: errorinfo.cpp:54
+#: errorinfo.cpp:56
 msgid "Cannot specify the same file."
 msgstr "同じファイルを指定することはできません。"
 
-#: errorinfo.cpp:58
+#: errorinfo.cpp:60
 msgid "This file is not t9x format."
 msgstr "t9xフォーマットのファイルではありません。"
 
-#: errorinfo.cpp:62
+#: errorinfo.cpp:64
 msgid "This is not BASIC intermediate language file. Continue this process."
 msgstr "BASIC中間言語形式のファイルではありませんが、処理を続けます。"
 
-#: errorinfo.cpp:66
+#: errorinfo.cpp:68
 #, c-format
 msgid "Unknown error: %d"
 msgstr "不明なエラー: %d"
 
-#: errorinfo.cpp:101
+#: errorinfo.cpp:103
 msgid "Error"
 msgstr "エラー"
 
-#: errorinfo.cpp:104
+#: errorinfo.cpp:106
 msgid "Warning"
 msgstr "警告"
 
-#: findposbox.cpp:23
+#: findposbox.cpp:22
 msgid "Find Position"
 msgstr "位置を検索"
 
-#: findposbox.cpp:39
+#: findposbox.cpp:38
 msgid "Find by time"
 msgstr "時間で検索"
 
-#: findposbox.cpp:48
+#: findposbox.cpp:47
 msgid "min."
 msgstr "分"
 
-#: findposbox.cpp:51
+#: findposbox.cpp:50
 msgid "sec."
 msgstr "秒"
 
-#: findposbox.cpp:54
+#: findposbox.cpp:53
 msgid "msec."
 msgstr "ミリ秒"
 
-#: findposbox.cpp:58
+#: findposbox.cpp:57
 msgid "Find by sample position"
 msgstr "サンプル位置で検索"
 
-#: maddressbox.cpp:32
+#: maddressbox.cpp:34
 msgid "Machine code information"
 msgstr "マシン語情報"
 
-#: maddressbox.cpp:44
+#: maddressbox.cpp:46
 msgid "Start address"
 msgstr "スタートアドレス"
 
-#: maddressbox.cpp:48
+#: maddressbox.cpp:50
 msgid "Execute address"
 msgstr "実行開始アドレス"
 
-#: maddressbox.cpp:52
+#: maddressbox.cpp:54
 msgid "Data size"
 msgstr "データサイズ"
 
-#: maddressbox.cpp:58
+#: maddressbox.cpp:60
 msgid "Include header and footer in data."
 msgstr "データにヘッダ・フッタが含まれている"
 
-#: maddressbox.cpp:61
+#: maddressbox.cpp:63
 msgid "If cancel, file will output without header."
 msgstr "「キャンセル」するとヘッダなしで出力します。"
 
-#: maddressbox.cpp:118
+#: maddressbox.cpp:120
 msgid "Please confirm this information."
 msgstr "情報を確認して下さい。"
 
-#: maddressbox.cpp:121
+#: maddressbox.cpp:123
 msgid "Please input some information."
 msgstr "情報を入力してください。"
 
-#: maddressbox.cpp:184
+#: maddressbox.cpp:186
 msgid "Address accepts only 4 digits hexadecimal."
 msgstr "アドレスは16進数4桁で入力してください。"
 
-#: maddressbox.cpp:185 rftypebox.cpp:243
+#: maddressbox.cpp:187 rftypebox.cpp:245
 msgid "error"
 msgstr "エラー"
 
-#: progressbox.cpp:37
+#: progressbox.cpp:39
 msgid "Analyzing..."
 msgstr "解析中..."
 
-#: progressbox.cpp:39
+#: progressbox.cpp:41
 msgid "Converting..."
 msgstr "変換中..."
 
-#: rftypebox.cpp:64
+#: rftypebox.cpp:66
 msgid "File Type"
 msgstr "ファイル種類"
 
-#: rftypebox.cpp:73
+#: rftypebox.cpp:75
 msgid "Please select this file type."
 msgstr "ファイルの種類を選択してください。"
 
-#: rftypebox.cpp:75
+#: rftypebox.cpp:77
 msgid "Plain File (Add no header and footer.)"
 msgstr "ただのファイル(ヘッダ・フッタを追加しません。)"
 
-#: rftypebox.cpp:77
+#: rftypebox.cpp:79
 msgid "Real File (Select following items.)"
 msgstr "実ファイル(以下の項目を選択してください。)"
 
-#: rftypebox.cpp:83 rftypebox.cpp:92
+#: rftypebox.cpp:85 rftypebox.cpp:94
 msgid "BASIC"
 msgstr "BASIC"
 
-#: rftypebox.cpp:84 rftypebox.cpp:93
+#: rftypebox.cpp:86 rftypebox.cpp:95
 msgid "Data"
 msgstr "データ"
 
-#: rftypebox.cpp:85 rftypebox.cpp:94
+#: rftypebox.cpp:87 rftypebox.cpp:96
 msgid "Machine"
 msgstr "マシン語"
 
-#: rftypebox.cpp:100
+#: rftypebox.cpp:102
 msgid "Binary"
 msgstr "バイナリ"
 
-#: rftypebox.cpp:101
+#: rftypebox.cpp:103
 msgid "Ascii"
 msgstr "アスキー"
 
-#: rftypebox.cpp:108
+#: rftypebox.cpp:110
 msgid "Please input internal file name."
 msgstr "内部ファイル名を入力してください。"
 
-#: rftypebox.cpp:242
+#: rftypebox.cpp:244
 msgid "Internal file name accepts only alphabets and digits."
 msgstr "内部ファイル名は半角英数字で入力してください。"
 
-#: wavewindow.cpp:24 wavtool.cpp:843
+#: wavewindow.cpp:25 wavtool.cpp:850
 msgid "Wave"
 msgstr "波形"
 
-#: wavewindow.cpp:28 wavtool.cpp:150
+#: wavewindow.cpp:29 wavtool.cpp:153
 msgid "&Close"
 msgstr "閉じる(&C)"
 
-#: wavewindow.cpp:30
+#: wavewindow.cpp:31
 msgid "Zoom &In"
 msgstr "拡大(&I)"
 
-#: wavewindow.cpp:31
+#: wavewindow.cpp:32
 msgid "Zoom &Out"
 msgstr "縮小(&O)"
 
-#: wavewindow.cpp:33
+#: wavewindow.cpp:34
 msgid "&Find..."
 msgstr "検索(&F)..."
 
-#: wavewindow.cpp:35
+#: wavewindow.cpp:36
 msgid "&Update"
 msgstr "更新(&U)"
 
-#: wavewindow.cpp:37
+#: wavewindow.cpp:38
 msgid "&Reload from the Beginning"
 msgstr "最初からリロード(&R)"
 
-#: wavewindow.cpp:39
+#: wavewindow.cpp:40
 msgid "Show in &Milli Second"
 msgstr "ミリ秒で表示(&M)"
 
-#: wavewindow.cpp:40
+#: wavewindow.cpp:41
 msgid "Show in &Sample Position"
 msgstr "サンプル位置で表示(&S)"
 
-#: wavewindow.cpp:43 wavtool.cpp:200
+#: wavewindow.cpp:44 wavtool.cpp:203
 msgid "&File"
 msgstr "ファイル(&F)"
 
-#: wavewindow.cpp:44 wavtool.cpp:202
+#: wavewindow.cpp:45 wavtool.cpp:205
 msgid "&View"
 msgstr "表示(&V)"
 
-#: wavtool.cpp:128
-msgid "Hide wavtool"
-msgstr "wavtoolを隠す"
-
-#: wavtool.cpp:128
-msgid "Hide Others"
-msgstr "ほかを隠す"
-
-#: wavtool.cpp:128
-msgid "Show All"
-msgstr "すべて表示"
-
-#: wavtool.cpp:128
-msgid "Quit wavtool"
-msgstr "wavtoolを終了"
-
-#: wavtool.cpp:128
-msgid "Services"
-msgstr "サービス"
-
-#: wavtool.cpp:128
-msgid "Preferences…"
-msgstr "環境設定..."
-
-#: wavtool.cpp:128
-msgid "Window"
-msgstr "ウィンドウ"
-
-#: wavtool.cpp:129
+#: wavtool.cpp:131
 msgid "OK"
 msgstr "OK"
 
-#: wavtool.cpp:129
+#: wavtool.cpp:131
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: wavtool.cpp:149
-msgid "&Open..."
-msgstr "開く(&O)..."
+#: wavtool.cpp:132
+msgid "Hide wavtool"
+msgstr "wavtoolを隠す"
 
-#: wavtool.cpp:153
+#: wavtool.cpp:132
+msgid "Hide Others"
+msgstr "ほかを隠す"
+
+#: wavtool.cpp:132
+msgid "Show All"
+msgstr "すべてを表示"
+
+#: wavtool.cpp:132
+msgid "Quit wavtool"
+msgstr "wavtoolを終了"
+
+#: wavtool.cpp:132
+msgid "Services"
+msgstr "サービス"
+
+#: wavtool.cpp:132
+msgid "Preferences…"
+msgstr "環境設定…"
+
+#: wavtool.cpp:132
+msgid "Window"
+msgstr "ウィンドウ"
+
+#: wavtool.cpp:132
+msgid "Minimize"
+msgstr "しまう"
+
+#: wavtool.cpp:132
+msgid "Zoom"
+msgstr "拡大／縮小"
+
+#: wavtool.cpp:132
+msgid "Bring All to Front"
+msgstr "すべてを手前に移動"
+
+#: wavtool.cpp:152
+msgid "&Open...\tCtrl+O"
+msgstr "開く(&O)...\tCtrl+O"
+
+#: wavtool.cpp:156
 msgid "&Real File..."
 msgstr "実ファイル(&R)..."
 
-#: wavtool.cpp:155
+#: wavtool.cpp:158
 msgid "&L3 File..."
 msgstr "L3ファイル(&L)..."
 
-#: wavtool.cpp:156
+#: wavtool.cpp:159
 msgid "&T9X File..."
 msgstr "T9Xファイル(&T)..."
 
-#: wavtool.cpp:157
+#: wavtool.cpp:160
 msgid "L3&B File..."
 msgstr "L3Bファイル(&B)..."
 
-#: wavtool.cpp:158
+#: wavtool.cpp:161
 msgid "L3&C File..."
 msgstr "L3Cファイル(&C)..."
 
-#: wavtool.cpp:159
+#: wavtool.cpp:162
 msgid "&WAV File..."
 msgstr "WAVファイル(&W)..."
 
-#: wavtool.cpp:160
+#: wavtool.cpp:163
 msgid "&Export To"
 msgstr "エクスポート(&E)"
 
-#: wavtool.cpp:162
+#: wavtool.cpp:165
 msgid "&Analyze Wave"
 msgstr "波形解析(&A)"
 
-#: wavtool.cpp:163
+#: wavtool.cpp:166
 msgid "Analyze &Files"
 msgstr "ファイル解析(&F)"
 
-#: wavtool.cpp:167
+#: wavtool.cpp:170
 msgid "&Reccent Files"
 msgstr "最近使用したファイル(&R)"
 
-#: wavtool.cpp:169
-msgid "E&xit"
-msgstr "終了(&X)"
+#: wavtool.cpp:172
+msgid "E&xit\tAlt+F4"
+msgstr "終了(&X)\tAlt+F4"
 
-#: wavtool.cpp:171
+#: wavtool.cpp:174
 msgid "File &Type..."
 msgstr "ファイル種類(&T)..."
 
-#: wavtool.cpp:172
+#: wavtool.cpp:175
 msgid "&Machine Code..."
 msgstr "マシン語(&M)..."
 
-#: wavtool.cpp:175
+#: wavtool.cpp:178
 msgid "&Auto Detect"
 msgstr "自動判定(&A)"
 
-#: wavtool.cpp:182
+#: wavtool.cpp:185
 msgid "&Double Speed FSK"
 msgstr "倍速FSK(&D)"
 
-#: wavtool.cpp:183
+#: wavtool.cpp:186
 msgid "&Baud Rate"
 msgstr "ボーレート(&B)"
 
-#: wavtool.cpp:186 wavtool.cpp:872
+#: wavtool.cpp:189 wavtool.cpp:879
 msgid "None"
 msgstr "なし"
 
-#: wavtool.cpp:189
+#: wavtool.cpp:192
 msgid "Wave &Correct"
 msgstr "波形補正(&C)"
 
-#: wavtool.cpp:191
+#: wavtool.cpp:194
 msgid "&Details..."
 msgstr "詳細(&D)..."
 
-#: wavtool.cpp:194
+#: wavtool.cpp:197
 msgid "&Wave Window"
 msgstr "波形ウィンドウ(&W)"
 
-#: wavtool.cpp:196
+#: wavtool.cpp:199
 msgid "&About..."
 msgstr "バージョン情報(&A)..."
 
-#: wavtool.cpp:201
+#: wavtool.cpp:204
 msgid "&Settings"
 msgstr "設定(&S)"
 
-#: wavtool.cpp:203
+#: wavtool.cpp:208
+msgid "&Window"
+msgstr "ウィンドウ(&W)"
+
+#: wavtool.cpp:210
 msgid "&Help"
 msgstr "ヘルプ(&H)"
 
-#: wavtool.cpp:444
+#: wavtool.cpp:451
 msgid "Open file"
 msgstr "ファイルを開く"
 
-#: wavtool.cpp:447
+#: wavtool.cpp:454
 msgid ""
 "Supported files (*.wav;*.l3c;*.l3b;*.l3;*.t9x;*.bin;*.bas;*.obj;*.dat)|*.wav;"
 "*.l3c;*.l3b;*.l3;*.t9x;*.bin;*.bas;*.obj;*.dat|All files (*.*)|*.*"
@@ -520,31 +536,31 @@ msgstr ""
 "対応ファイル(*.wav;*.l3c;*.l3b;*.l3;*.t9x;*.bin;*.bas;*.obj;*.dat)|*.wav;*."
 "l3c;*.l3b;*.l3;*.t9x;*.bin;*.bas;*.obj;*.dat|すべてのファイル(*.*)|*.*"
 
-#: wavtool.cpp:699
+#: wavtool.cpp:706
 msgid "L3 file (*.l3)|*.l3"
 msgstr "L3ファイル(*.l3)|*.l3"
 
-#: wavtool.cpp:705
+#: wavtool.cpp:712
 msgid "T9X file (*.t9x)|*.t9x"
 msgstr "T9Xファイル(*.t9x)|*.t9x"
 
-#: wavtool.cpp:711
+#: wavtool.cpp:718
 msgid "L3B file (*.l3b)|*.l3b"
 msgstr "L3Bファイル(*.l3b)|*.l3b"
 
-#: wavtool.cpp:717
+#: wavtool.cpp:724
 msgid "L3C file (*.l3c)|*.l3c"
 msgstr "L3Cファイル(*.l3c)|*.l3c"
 
-#: wavtool.cpp:723
+#: wavtool.cpp:730
 msgid "Wave file (*.wav)|*.wav"
 msgstr "Waveファイル(*.wav)|*.wav"
 
-#: wavtool.cpp:729
+#: wavtool.cpp:736
 msgid "Real file (*.bin)|*.bin|All Files (*.*)|*.*"
 msgstr "実ファイル(*.bin)|*.bin|すべてのファイル(*.*)|*.*"
 
-#: wavtool.cpp:732
+#: wavtool.cpp:739
 msgid ""
 "Real file (*.bin)|*.bin|BASIC file (*.bas)|*.bas|Data file (*.dat)|*.dat|All "
 "files (*.*)|*.*"
@@ -552,102 +568,54 @@ msgstr ""
 "実ファイル(*.bin)|*.bin|BASICファイル(*.bas)|*.bas|データファイル(*.dat)|*."
 "dat|すべてのファイル(*.*)|*.*"
 
-#: wavtool.cpp:739
+#: wavtool.cpp:746
 msgid "All files (*.*)|*.*"
 msgstr "すべてのファイル(*.*)|*.*"
 
-#: wavtool.cpp:746
+#: wavtool.cpp:753
 msgid "Export file"
 msgstr "ファイルをエクスポート"
 
-#: wavtool.cpp:842
+#: wavtool.cpp:849
 msgid "Analyze"
 msgstr "解析"
 
-#: wavtool.cpp:844
+#: wavtool.cpp:851
 msgid "File"
 msgstr "ファイル"
 
-#: wavtool.cpp:857
+#: wavtool.cpp:864
 msgid "Double FSK"
 msgstr "倍速FSK"
 
-#: wavtool.cpp:902
+#: wavtool.cpp:909
 msgid "Export to ..."
 msgstr "エクスポート..."
 
-#: wavtool.cpp:903
+#: wavtool.cpp:910
 msgid "Real File"
 msgstr "実ファイル"
 
-#: wavtool.cpp:904
+#: wavtool.cpp:911
 msgid "L3 File"
 msgstr "L3ファイル"
 
-#: wavtool.cpp:905
+#: wavtool.cpp:912
 msgid "T9X File"
 msgstr "T9Xファイル"
 
-#: wavtool.cpp:906
+#: wavtool.cpp:913
 msgid "L3B File"
 msgstr "L3Bファイル"
 
-#: wavtool.cpp:907
+#: wavtool.cpp:914
 msgid "L3C File"
 msgstr "L3Cファイル"
 
-#: wavtool.cpp:908
+#: wavtool.cpp:915
 msgid "Wav File"
 msgstr "Wavファイル"
 
-#: wavtool.cpp:1188
+#: wavtool.cpp:1195
 msgid "About..."
 msgstr "About..."
-
-#~ msgid "usec."
-#~ msgstr "マイクロ秒"
-
-#~ msgid "wav -> l3c"
-#~ msgstr "wav -> l3c"
-
-#~ msgid "l3c <-> l3b, t9x"
-#~ msgstr "l3c <-> l3b, t9x"
-
-#~ msgid "l3b, t9x <-> l3"
-#~ msgstr "l3b, t9x <-> l3"
-
-#~ msgid "7bit"
-#~ msgstr "7ビット"
-
-#~ msgid "8bit"
-#~ msgstr "8ビット"
-
-#~ msgid "- 1200Hz -"
-#~ msgstr "- 1200Hz -"
-
-#~ msgid "- 2400Hz -"
-#~ msgstr "- 2400Hz -"
-
-#~ msgid "Tape Image File"
-#~ msgstr "テープイメージファイル"
-
-#~ msgid "Data &Type..."
-#~ msgstr "データ種類(&D)..."
-
-#~ msgid "cos wave"
-#~ msgstr "cos wave"
-
-#~ msgid "sin wave"
-#~ msgstr "sin wave"
-
-#~ msgid "Auto detect"
-#~ msgstr "自動判定"
-
-#~ msgid "&Options"
-#~ msgstr "オプション(&O)"
-
-#~ msgid "&Configure..."
-#~ msgstr "設定(&C)..."
-
-#~ msgid "&Other"
-#~ msgstr "その他(&O)"

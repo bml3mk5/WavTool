@@ -1,9 +1,10 @@
 ﻿/// @file paw_format.h
 ///
-/// wave format header definition
+/// @brief wave format
 ///
-
-
+/// @author Copyright (c) Sasaji. All rights reserved.
+/// @date   2017.12.01
+///
 #ifndef _PARSEWAV_FORMAT_H_
 #define _PARSEWAV_FORMAT_H_
 

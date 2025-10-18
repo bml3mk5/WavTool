@@ -1,9 +1,10 @@
 ﻿/// @file paw_util.cpp
 ///
-/// @author Sasaji
+/// @brief 関数群
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2017.12.01
 ///
-
 #include "paw_util.h"
 
 

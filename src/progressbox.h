@@ -1,9 +1,9 @@
 ﻿/// @file progressbox.h
 ///
-/// progressbox.h
+/// @brief プログレスダイアログ
 ///
-
-
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #ifndef _PROGRESSBOX_H_
 #define _PROGRESSBOX_H_
 

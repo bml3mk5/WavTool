@@ -2,6 +2,8 @@
 ///
 /// @brief 開始アドレス設定ダイアログ
 ///
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #include "maddressbox.h"
 
 //////////////////////////////////////////////////////////////////////

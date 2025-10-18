@@ -47,6 +47,7 @@ SRCLANG=$(LANGDIR)/
 OBJS=progressbox.o \
 	findposbox.o \
 	maddressbox.o \
+	mymenu.o \
 	rftypebox.o \
 	configbox.o \
 	parsewav.o \

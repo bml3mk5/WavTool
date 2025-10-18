@@ -1,9 +1,10 @@
 ﻿/// @file paw_parsewav.cpp
 ///
-/// @author Sasaji
+/// @brief waveデータ解析
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2019.08.01
 ///
-
 #include "paw_parsewav.h"
 #include "paw_file.h"
 #include "utils.h"

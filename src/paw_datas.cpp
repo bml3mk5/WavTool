@@ -1,6 +1,9 @@
 ﻿/// @file paw_datas.cpp
 ///
-
+/// @brief データ保持用の各定義
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #include "paw_datas.h"
 #include <string.h>
 

@@ -1,9 +1,9 @@
 ﻿/// @file configbox.h
 ///
-/// configbox.h
+/// @brief 設定ダイアログ
 ///
-
-
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #ifndef _CONFIGBOX_H_
 #define _CONFIGBOX_H_
 

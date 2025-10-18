@@ -45,52 +45,52 @@
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>false</CLRSupport>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLLRelease|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>false</CLRSupport>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>false</CLRSupport>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLLRelease|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>false</CLRSupport>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>false</CLRSupport>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLLDebug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>false</CLRSupport>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>false</CLRSupport>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLLDebug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <CLRSupport>false</CLRSupport>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -142,10 +142,6 @@
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DLLDebug|Win32'">true</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DLLDebug|x64'">true</LinkIncremental>
-    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EmbedManifest>
-    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='DLLDebug|Win32'">true</EmbedManifest>
-    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</EmbedManifest>
-    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='DLLDebug|x64'">true</EmbedManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\$(Platform)\</OutDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='DLLRelease|Win32'">$(SolutionDir)$(Configuration)\$(Platform)\</OutDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)$(Configuration)\$(Platform)\</OutDir>
@@ -187,6 +183,9 @@
     <PostBuildEvent>
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)\</Command>
     </PostBuildEvent>
+    <Manifest>
+      <AdditionalManifestFiles>$(wxWidgetsDir)include\wx\msw\wx_dpi_aware_pmv2.manifest</AdditionalManifestFiles>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLLDebug|Win32'">
     <ClCompile>
@@ -216,6 +215,9 @@
     <PostBuildEvent>
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)\</Command>
     </PostBuildEvent>
+    <Manifest>
+      <AdditionalManifestFiles>$(wxWidgetsDir)include\wx\msw\wx_dpi_aware_pmv2.manifest</AdditionalManifestFiles>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -244,6 +246,9 @@
     <PostBuildEvent>
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)\</Command>
     </PostBuildEvent>
+    <Manifest>
+      <AdditionalManifestFiles>$(wxWidgetsDir)include\wx\msw\wx_dpi_aware_pmv2.manifest</AdditionalManifestFiles>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLLDebug|x64'">
     <ClCompile>
@@ -272,6 +277,9 @@
     <PostBuildEvent>
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)\</Command>
     </PostBuildEvent>
+    <Manifest>
+      <AdditionalManifestFiles>$(wxWidgetsDir)include\wx\msw\wx_dpi_aware_pmv2.manifest</AdditionalManifestFiles>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -302,6 +310,9 @@
     <PostBuildEvent>
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)\</Command>
     </PostBuildEvent>
+    <Manifest>
+      <AdditionalManifestFiles>$(wxWidgetsDir)include\wx\msw\wx_dpi_aware_pmv2.manifest</AdditionalManifestFiles>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLLRelease|Win32'">
     <ClCompile>
@@ -332,6 +343,9 @@
     <PostBuildEvent>
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)\</Command>
     </PostBuildEvent>
+    <Manifest>
+      <AdditionalManifestFiles>$(wxWidgetsDir)include\wx\msw\wx_dpi_aware_pmv2.manifest</AdditionalManifestFiles>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -361,6 +375,9 @@
     <PostBuildEvent>
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)\</Command>
     </PostBuildEvent>
+    <Manifest>
+      <AdditionalManifestFiles>$(wxWidgetsDir)include\wx\msw\wx_dpi_aware_pmv2.manifest</AdditionalManifestFiles>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLLRelease|x64'">
     <ClCompile>
@@ -390,6 +407,9 @@
     <PostBuildEvent>
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)\</Command>
     </PostBuildEvent>
+    <Manifest>
+      <AdditionalManifestFiles>$(wxWidgetsDir)include\wx\msw\wx_dpi_aware_pmv2.manifest</AdditionalManifestFiles>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\config.cpp" />
@@ -397,6 +417,7 @@
     <ClCompile Include="..\src\errorinfo.cpp" />
     <ClCompile Include="..\src\findposbox.cpp" />
     <ClCompile Include="..\src\maddressbox.cpp" />
+    <ClCompile Include="..\src\mymenu.cpp" />
     <ClCompile Include="..\src\parsewav.cpp" />
     <ClCompile Include="..\src\paw_datas.cpp" />
     <ClCompile Include="..\src\paw_defs.cpp" />
@@ -423,6 +444,7 @@
     <ClInclude Include="..\src\errorinfo.h" />
     <ClInclude Include="..\src\findposbox.h" />
     <ClInclude Include="..\src\maddressbox.h" />
+    <ClInclude Include="..\src\mymenu.h" />
     <ClInclude Include="..\src\parsewav.h" />
     <ClInclude Include="..\src\paw_datas.h" />
     <ClInclude Include="..\src\paw_defs.h" />

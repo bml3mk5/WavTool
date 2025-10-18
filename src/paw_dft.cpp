@@ -1,9 +1,10 @@
 ﻿/// @file paw_dft.cpp
 ///
-/// @author Sasaji
+/// @brief フーリエ変換
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2017.12.01
 ///
-
 #include <string.h>
 #define _USE_MATH_DEFINES
 #include <math.h>

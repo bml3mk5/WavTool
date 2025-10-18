@@ -1,11 +1,10 @@
 /// @file paw_format.cpp
 ///
-/// @brief wav format
+/// @brief wave format
 ///
-/// @author Sasaji
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2017.12.01
 ///
-
 #include <string.h>
 #include "paw_format.h"
 

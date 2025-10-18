@@ -2,10 +2,9 @@
 ///
 /// @brief waveデータ <-> 搬送波データ <-> シリアルデータ　変換用パラメータ
 ///
-/// @author Sasaji
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2011.7.1
 ///
-
 #include "paw_param.h"
 
 

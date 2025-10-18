@@ -1,10 +1,10 @@
 ﻿/// @file paw_parsecar.h
 ///
-/// @author Sasaji
+/// @brief 搬送波データ解析
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2019.08.01
 ///
-
-
 #ifndef _PARSEWAV_PARSECAR_H_
 #define _PARSEWAV_PARSECAR_H_
 

@@ -1,9 +1,9 @@
 ﻿/// @file rftypebox.h
 ///
-/// specify file type
+/// @brief 実ファイル種類設定ダイアログ
 ///
-
-
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #ifndef _RFTYPEBOX_H_
 #define _RFTYPEBOX_H_
 

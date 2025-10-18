@@ -1,9 +1,9 @@
 ﻿/// @file findposbox.h
 ///
-/// specify find position
+/// @brief 表示位置検索ダイアログ
 ///
-
-
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #ifndef _FINDPOSBOX_H_
 #define _FINDPOSBOX_H_
 

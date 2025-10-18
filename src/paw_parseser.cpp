@@ -1,9 +1,10 @@
 ﻿/// @file paw_parseser.cpp
 ///
-/// @author Sasaji
+/// @brief シリアルデータ解析
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2019.08.01
 ///
-
 #include "paw_parseser.h"
 #include "paw_file.h"
 #include "paw_format.h"
@@ -264,7 +265,7 @@ int SerialParser::SkipL3BSample(int dir)
 /// @brief t9xファイルのビットサイズを計算
 int SerialParser::CalcT9XSize(InputFile &file)
 {
-	int l;
+//	int l;
 	int sample_num = 0;
 	int file_size = file.GetSize();
 	file.Fseek(sizeof(t9x_header_t), SEEK_SET);
@@ -272,8 +273,9 @@ int SerialParser::CalcT9XSize(InputFile &file)
 	while(file_size > 0) {
 		file_size--;
 
-		l = file.Fgetc();
-		l &= 0xff;
+		file.Fgetc();
+//		l = file.Fgetc();
+//		l &= 0xff;
 
 //		for(int i=0; i<8; i++) {
 //			char c = (l & (1 << i)) ? '1' : '0';

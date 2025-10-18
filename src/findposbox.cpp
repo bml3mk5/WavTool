@@ -1,11 +1,10 @@
 ﻿/// @file findposbox.cpp
 ///
-/// @brief 実ファイル種類設定ダイアログ
+/// @brief 表示位置検索ダイアログ
 ///
-
-
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #include "findposbox.h"
-
 
 // Attach Event
 BEGIN_EVENT_TABLE(FindPosBox, wxDialog)

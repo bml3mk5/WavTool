@@ -2,6 +2,8 @@
 ///
 /// @brief 実ファイル種類設定ダイアログ
 ///
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #include "rftypebox.h"
 
 //////////////////////////////////////////////////////////////////////

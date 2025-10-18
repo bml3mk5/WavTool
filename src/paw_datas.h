@@ -1,6 +1,9 @@
 ﻿/// @file paw_datas.h
 ///
-
+/// @brief データ保持用の各定義
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #ifndef _PARSEWAV_DATAS_H_
 #define _PARSEWAV_DATAS_H_
 

@@ -1,10 +1,10 @@
 ﻿/// @file paw_util.h
 ///
-/// @author Sasaji
+/// @brief 関数群
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2011.12.01
 ///
-
-
 #ifndef _PARSEWAV_UTIL_H_
 #define _PARSEWAV_UTIL_H_
 

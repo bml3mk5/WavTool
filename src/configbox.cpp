@@ -2,6 +2,8 @@
 ///
 /// @brief 設定ダイアログ
 ///
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #include "configbox.h"
 
 static wxString dbg_list[] = {

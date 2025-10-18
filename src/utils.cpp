@@ -2,6 +2,8 @@
 ///
 /// @brief ユーティリティ
 ///
+/// @author Copyright (c) Sasaji. All rights reserved.
+///
 #include "utils.h"
 
 namespace UTILS
@@ -87,7 +89,11 @@ const char *get_time_cstr(uint32_t usec)
 	int min = sec / 60;
 	sec = sec % 60;
 
-	sprintf(str, "%d\'%02d\".%03d", min, sec, msec);
+#if defined(__WXMSW__)
+	_snprintf(str, sizeof(str), "%d\'%02d\".%03d", min, sec, msec);
+#else
+	snprintf(str, sizeof(str), "%d\'%02d\".%03d", min, sec, msec);
+#endif
 	return str;
 }
 

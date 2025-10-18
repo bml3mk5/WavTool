@@ -1,9 +1,10 @@
 ﻿/// @file paw_parsebin.cpp
 ///
-/// @author Sasaji
+/// @brief バイナリデータ解析
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2019.08.01
 ///
-
 #include "paw_parsebin.h"
 #include "paw_file.h"
 #include "utils.h"

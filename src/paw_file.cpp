@@ -1,9 +1,10 @@
 ﻿/// @file paw_file.cpp
 ///
-/// @author Sasaji
+/// @brief ファイル入出力
+///
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2019.08.01
 ///
-
 #include "paw_file.h"
 #include "utils.h"
 

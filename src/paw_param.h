@@ -2,11 +2,9 @@
 ///
 /// @brief waveデータ <-> 搬送波データ <-> シリアルデータ　変換用パラメータ
 ///
-/// @author Sasaji
+/// @author Copyright (c) Sasaji. All rights reserved.
 /// @date   2011.7.1
 ///
-
-
 #ifndef _PARSEWAV_PARAM_H_
 #define _PARSEWAV_PARAM_H_
 
