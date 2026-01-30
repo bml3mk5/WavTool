@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wavtool_wx\n"
-"POT-Creation-Date: 2025-10-15 20:01+0900\n"
-"PO-Revision-Date: 2025-10-15 20:42+0900\n"
+"POT-Creation-Date: 2026-01-16 00:26+0900\n"
+"PO-Revision-Date: 2026-01-16 00:26+0900\n"
 "Last-Translator: Sasaji <s-sasaji@ddo.jp>\n"
 "Language-Team: \n"
-"Language: Japanese\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 3.8\n"
 "X-Poedit-KeywordsList: _;_TX;gettext;gettext_noop\n"
 "X-Poedit-Basepath: ../../src\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -39,7 +39,7 @@ msgstr "波形を反転"
 msgid "Detect Half Wave"
 msgstr "半波検出"
 
-#: configbox.cpp:79 wavtool.cpp:878
+#: configbox.cpp:79
 msgid "Correct"
 msgstr "補正"
 
@@ -47,15 +47,15 @@ msgstr "補正"
 msgid "No"
 msgstr "なし"
 
-#: configbox.cpp:81 wavtool.cpp:190 wavtool.cpp:880
+#: configbox.cpp:81
 msgid "COS Wave"
 msgstr "COS波"
 
-#: configbox.cpp:82 wavtool.cpp:191 wavtool.cpp:881
+#: configbox.cpp:82
 msgid "SIN Wave"
 msgstr "SIN波"
 
-#: configbox.cpp:90 wavtool.cpp:892
+#: configbox.cpp:90
 msgid "Amplitude of Correct Wave"
 msgstr "補正波形の振幅"
 
@@ -91,11 +91,11 @@ msgstr "ボーレート"
 msgid "Use Double Speed FSK"
 msgstr "倍速FSKを使用"
 
-#: configbox.cpp:133 wavtool.cpp:858
+#: configbox.cpp:133
 msgid "Baud"
 msgstr "ボーレート"
 
-#: configbox.cpp:145 wavtool.cpp:859
+#: configbox.cpp:145
 msgid "Auto Detect"
 msgstr "自動判定"
 
@@ -276,7 +276,7 @@ msgstr "情報を入力してください。"
 msgid "Address accepts only 4 digits hexadecimal."
 msgstr "アドレスは16進数4桁で入力してください。"
 
-#: maddressbox.cpp:187 rftypebox.cpp:245
+#: maddressbox.cpp:187
 msgid "error"
 msgstr "エラー"
 
@@ -530,11 +530,12 @@ msgstr "ファイルを開く"
 
 #: wavtool.cpp:454
 msgid ""
-"Supported files (*.wav;*.l3c;*.l3b;*.l3;*.t9x;*.bin;*.bas;*.obj;*.dat)|*.wav;"
-"*.l3c;*.l3b;*.l3;*.t9x;*.bin;*.bas;*.obj;*.dat|All files (*.*)|*.*"
+"Supported files (*.wav;*.l3c;*.l3b;*.l3;*.t9x;*.bin;*.bas;*.obj;*.dat)|"
+"*.wav;*.l3c;*.l3b;*.l3;*.t9x;*.bin;*.bas;*.obj;*.dat|All files (*.*)|*.*"
 msgstr ""
-"対応ファイル(*.wav;*.l3c;*.l3b;*.l3;*.t9x;*.bin;*.bas;*.obj;*.dat)|*.wav;*."
-"l3c;*.l3b;*.l3;*.t9x;*.bin;*.bas;*.obj;*.dat|すべてのファイル(*.*)|*.*"
+"対応ファイル(*.wav;*.l3c;*.l3b;*.l3;*.t9x;*.bin;*.bas;*.obj;*.dat)|"
+"*.wav;*.l3c;*.l3b;*.l3;*.t9x;*.bin;*.bas;*.obj;*.dat|すべてのファイル(*.*)|"
+"*.*"
 
 #: wavtool.cpp:706
 msgid "L3 file (*.l3)|*.l3"
@@ -565,8 +566,8 @@ msgid ""
 "Real file (*.bin)|*.bin|BASIC file (*.bas)|*.bas|Data file (*.dat)|*.dat|All "
 "files (*.*)|*.*"
 msgstr ""
-"実ファイル(*.bin)|*.bin|BASICファイル(*.bas)|*.bas|データファイル(*.dat)|*."
-"dat|すべてのファイル(*.*)|*.*"
+"実ファイル(*.bin)|*.bin|BASICファイル(*.bas)|*.bas|データファイル(*.dat)|"
+"*.dat|すべてのファイル(*.*)|*.*"
 
 #: wavtool.cpp:746
 msgid "All files (*.*)|*.*"
@@ -616,6 +617,6 @@ msgstr "L3Cファイル"
 msgid "Wav File"
 msgstr "Wavファイル"
 
-#: wavtool.cpp:1195
+#: wavtool.cpp:1196
 msgid "About..."
 msgstr "About..."

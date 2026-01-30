@@ -10,12 +10,12 @@
 #define APPLICATION_NAME		"wavtool"
 #define APPLICATION_XPMICON_NAME wavtool_xpm
 
-#define APPLICATION_VERSION	"0.6.6"
+#define APPLICATION_VERSION	"0.6.7"
 #define APP_VER_MAJOR	0
 #define APP_VER_MINOR	6
-#define APP_VER_REV	6
+#define APP_VER_REV	7
 #define APP_VER_BUILD	0
-#define APP_COPYRIGHT	"Copyright (C) 2011-2025 Sasaji"
+#define APP_COPYRIGHT	"Copyright (C) 2011-2026 Sasaji"
 
 #if defined(__MINGW32__)
 #if defined(x86_64) || defined(__x86_64)

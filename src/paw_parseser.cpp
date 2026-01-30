@@ -255,7 +255,7 @@ int SerialParser::SkipL3BSample(int dir)
 				pos++;
 			}
 			infile->Fseek(dir, SEEK_CUR);
-			infile->AddSamplePos(dir);
+			infile->AddSamplePos(dir + crlf);
 			dir = -crlf;
 		}
 	}
@@ -307,11 +307,12 @@ int SerialParser::GetT9XSample(SerialData *s_data)
 
 		mile_stone->MarkIfNeed(infile->SamplePos());
 
-		for(int i=sta; i<8; i++) {
+		for(int i=sta; i<8 && s_data->IsFull() != true; i++) {
 			char c = (l & (1 << i)) ? '1' : '0';
 			s_data->Add(c, infile->SamplePos());
 			infile->IncreaseSamplePos();
 		}
+		sta = 0;
 	}
 	if (infile->SamplePos() >= infile->SampleNum()) {
 		s_data->LastData(true);
@@ -651,10 +652,10 @@ int SerialParser::DecodeToBinary(SerialData *s_data, BinaryData *b_data)
 		// parity bit
 		if (bit_parity & 0x01) {
 			// odd parity
-			if (d.Data() == (parity_count & 0x01)) bin_err |= 0xc;		// error
+			if (((d.Data() ^ parity_count) & 0x01) == 0) bin_err |= 0xc;	// error
 		} else {
 			// even parity
-			if (d.Data() == (1 - (parity_count & 0x01))) bin_err |= 0xc;	// error
+			if (((d.Data() ^ parity_count) & 0x01) != 0) bin_err |= 0xc;	// error
 		}
 		data_pos++;
 	} else if (data_pos == bit_len + 1 + (bit_parity >= 0 ? 1 : 0)) {
@@ -846,7 +847,7 @@ int SerialParser::WriteT9XData(OutputFile &outfile, SerialData *s_data)
 ///
 /// @param[in,out] outfile ファイル
 /// @param[in]     s_data  シリアルデータ
-/// @param[in]     redata  余りデータ+位置  
+/// @param[in,out] redata  余りデータ+位置  
 /// @return                長さ
 int SerialParser::WriteT9XData(OutputFile &outfile, SerialData *s_data, int &redata)
 {
@@ -899,7 +900,7 @@ void SerialParser::DecordingReport(SerialData *s_data, wxString &buff, wxString 
 	case 1:
 		buff += _T(" OddParity");
 		break;
-	case 2:
+	case 0:
 		buff += _T(" EvenParity");
 		break;
 	default:

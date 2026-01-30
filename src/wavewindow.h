@@ -80,7 +80,8 @@ private:
 	int sample_num;
 	int correct_type;
 
-	double wmagnify;
+	double wmagnify;	///< ウィンドウの表示倍率
+	double amagnify;	///< サンプリング1つに対する表示倍率
 
 	int need_parse;
 	int reopened;	// 入力ファイルが変わったか
@@ -93,7 +94,7 @@ private:
 	void RecalcScrollBarPos(int num, int div);
 	void OnDraw(wxDC &dc);
 
-	CSampleArray *SelectAData(enum_file_type type, double &amagnify);
+	CSampleArray *SelectAData(enum_file_type type);
 	double SelectMeasureMagnify(enum_file_type type, int measure_type);
 
 public:

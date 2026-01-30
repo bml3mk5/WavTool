@@ -159,6 +159,7 @@ WavePanel::WavePanel(wxWindow* parent, wxWindowID id, ParseWav *wav)
 	pt_mouse.y = 0;
 
 	wmagnify = 1.0;
+	amagnify = 1.0;
 
 	sample_num = 0;
 	correct_type = 0;
@@ -296,7 +297,7 @@ void WavePanel::RecalcScrollBarPos(int num, int div)
 
 	wxSize sz_window = GetClientSize();
 
-	wxCoord vwindow_width = (wxCoord)((double)sample_num * wmagnify); // wnumerator / wdenominator;
+	wxCoord vwindow_width = (wxCoord)((double)sample_num * wmagnify * amagnify); // wnumerator / wdenominator;
 	pt_view.x = pt_view.x * num / div;
 
 	SetScrollBarPos(vwindow_width, sz_window.GetHeight(), pt_view.x, pt_view.y);
@@ -307,9 +308,8 @@ void WavePanel::Find(bool use_msec, uint32_t sample_msec, int sample_spos)
 	if (suspending) return;
 
 	enum_file_type file_type = file->GetType();
-	double amagnify = 1.0;
 
-	CSampleArray *a_data = SelectAData(file_type, amagnify);
+	CSampleArray *a_data = SelectAData(file_type);
 
 	bool viewing = (a_data != NULL);
 
@@ -381,9 +381,8 @@ void WavePanel::Find(bool use_msec, uint32_t sample_msec, int sample_spos)
 
 /// 入力ファイルのバッファと表示倍率を選択する
 /// @param [in]  type     ファイル種類
-/// @param [out] amagnify 倍率
 /// @return サンプルデータ
-CSampleArray *WavePanel::SelectAData(enum_file_type type, double &amagnify)
+CSampleArray *WavePanel::SelectAData(enum_file_type type)
 {
 	CSampleArray *a_data = NULL;
 	switch(type) {
@@ -407,6 +406,7 @@ CSampleArray *WavePanel::SelectAData(enum_file_type type, double &amagnify)
 		amagnify = 8.0;
 		break;
 	default:
+		amagnify = 1.0;
 		break;
 	}
 	return a_data;
@@ -457,9 +457,8 @@ void WavePanel::OnDraw(wxDC &dc)
 	wxPen bluedotpen(*wxBLUE, 1, wxPENSTYLE_DOT);
 
 	enum_file_type file_type = file->GetType();
-	double amagnify = 1.0;
 
-	CSampleArray *a_data = SelectAData(file_type, amagnify);
+	CSampleArray *a_data = SelectAData(file_type);
 	bool viewing = (a_data != NULL);
 
 	double measure_magnify = SelectMeasureMagnify(file_type, measure_type);
@@ -604,40 +603,48 @@ void WavePanel::OnDraw(wxDC &dc)
 //	view_left += (apitch - pt_view.x);
 //	int a_data_pos;
 	int a_exp = 2;
+	double show_tmag = 1.0;
 
 	if (file_type == FILETYPE_WAV) {
-		WaveDrawer drawer(w_data[0], apitch, view_right, wmagnify * amagnify, 0.5, w_ybase, w_yamp, false);
+		show_tmag = 0.5;
+		WaveDrawer drawer(w_data[0], apitch, view_right, wmagnify * amagnify, show_tmag, w_ybase, w_yamp, false);
 		drawer.Draw(dc, a_start_pos, a_exp);
 		if (correct_type > 0) {
-			WaveDrawer drawer(w_data[1], apitch, view_right, wmagnify * amagnify, 0.5, w_ybase, w_yamp, true);
+			WaveDrawer drawer(w_data[1], apitch, view_right, wmagnify * amagnify, show_tmag, w_ybase, w_yamp, true);
 			drawer.Draw(dc, a_start_pos, a_exp);
 		}
 	}
 
 	if (file_type == FILETYPE_L3C) {
-		FirstSampleDrawer drawer(c_data, apitch, view_right, wmagnify * amagnify, 0.75, c_ybase, h);
+		show_tmag = 8.0;
+		FirstSampleDrawer drawer(c_data, apitch, view_right, wmagnify * amagnify, show_tmag, c_ybase, h);
 		drawer.Draw(dc, a_start_pos, a_exp);
 	} else if (file_type < FILETYPE_L3C) {
 		a_exp *= w_data[0]->GetRate() / c_data->GetRate();
-		SampleDrawer drawer(a_data, c_data, apitch, view_right, wmagnify * amagnify, 0.75, c_ybase, h);
+		show_tmag *= 2; 
+		SampleDrawer drawer(a_data, c_data, apitch, view_right, wmagnify * amagnify, show_tmag, c_ybase, h);
 		drawer.Draw(dc, a_start_pos, a_exp);
 	}
 
 	if (file_type == FILETYPE_L3B || file_type == FILETYPE_T9X) {
-		FirstSampleDrawer drawer(s_data, apitch, view_right, wmagnify * amagnify, 0.5, s_ybase, h);
+		show_tmag = 8.0;
+		FirstSampleDrawer drawer(s_data, apitch, view_right, wmagnify * amagnify, show_tmag, s_ybase, h);
 		drawer.Draw(dc, a_start_pos, a_exp);
 	} else if (file_type < FILETYPE_L3B) {
 		a_exp *= 4;
-		SampleDrawer drawer(a_data, s_data, apitch, view_right, wmagnify * amagnify, 0.5, s_ybase, h);
+		show_tmag /= 2;
+		SampleDrawer drawer(a_data, s_data, apitch, view_right, wmagnify * amagnify, show_tmag, s_ybase, h);
 		drawer.Draw(dc, a_start_pos, a_exp);
 	}
 
 	a_exp *= 4;
-	SampleDrawer sn_drawer(a_data, sn_data, apitch, view_right, wmagnify * amagnify, 0.25, sn_ybase, h);
+	show_tmag /= 2;
+	SampleDrawer sn_drawer(a_data, sn_data, apitch, view_right, wmagnify * amagnify, show_tmag, sn_ybase, h);
 	sn_drawer.Draw(dc, a_start_pos, a_exp);
 
 	a_exp *= 4;
-	BinaryDrawer b_drawer(a_data, b_data, apitch, view_right, wmagnify * amagnify, 0.25, b_ybase, h);
+	show_tmag /= 2;
+	BinaryDrawer b_drawer(a_data, b_data, apitch, view_right, wmagnify * amagnify, show_tmag, b_ybase, h);
 	b_drawer.Draw(dc, a_start_pos, a_exp);
 }
 
@@ -722,7 +729,9 @@ void SampleDrawer::DrawOnePos(wxDC &dc, int data_spos, int a_data_spos, wxCoord 
 	bool err = (m_data->At(m_data_pos).Err() != 0);
 	bool tail = false;
 	do {
-		str += m_data->At(m_data_pos).Data();
+		uint8_t c = m_data->At(m_data_pos).Data();
+		if (c < 0x20 || c > 0x7f) c = (uint8_t)'?';
+		str += c;
 		m_data_pos++;
 		if (m_data_pos >= m_data->GetWritePos()) {
 			tail = true;

@@ -220,7 +220,7 @@ int CarrierParser::SkipL3CSample(int dir)
 				pos++;
 			}
 			infile->Fseek(dir, SEEK_CUR);
-			infile->AddSamplePos(dir);
+			infile->AddSamplePos(dir + crlf);
 			dir = -crlf;
 		}
 	}
